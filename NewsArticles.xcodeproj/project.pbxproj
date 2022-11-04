@@ -90,7 +90,7 @@
 		48C1480629156208003E9DCA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		48C1480929156645003E9DCA /* MockArticlesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockArticlesResponse.json; sourceTree = "<group>"; };
 		48C1480A2915665A003E9DCA /* EmptyArticleResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyArticleResponse.json; sourceTree = "<group>"; };
-		48C1480F29156F02003E9DCA /* MockInvalidData.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = MockInvalidData.geojson; sourceTree = "<group>"; };
+		48C1480F29156F02003E9DCA /* MockInvalidData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockInvalidData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,7 +273,7 @@
 			children = (
 				48C1480929156645003E9DCA /* MockArticlesResponse.json */,
 				48C1480A2915665A003E9DCA /* EmptyArticleResponse.json */,
-				48C1480F29156F02003E9DCA /* MockInvalidData.geojson */,
+				48C1480F29156F02003E9DCA /* MockInvalidData.json */,
 			);
 			path = Resouces;
 			sourceTree = "<group>";
