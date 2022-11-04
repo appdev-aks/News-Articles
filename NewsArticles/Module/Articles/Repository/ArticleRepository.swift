@@ -8,15 +8,15 @@
 import Foundation
 
 protocol ArticleRepositoryProtocol {
-    func getArticlesFromAPI(networkAPI: ArticleDataProtocol)
+    func getArticlesFromDataSource(articleData: ArticleDataProtocol)
 }
 
-class Repository {
+class ArticleRepository {
     
 }
 
-extension Repository: ArticleRepositoryProtocol {
-    func getArticlesFromAPI(networkAPI: ArticleDataProtocol) {
+extension ArticleRepository: ArticleRepositoryProtocol {
+    func getArticlesFromDataSource(articleData: ArticleDataProtocol) {
         
     }
 }

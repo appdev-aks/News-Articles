@@ -13,7 +13,13 @@ protocol ArticleDataProtocol {
 }
 
 class ArticleListViewModel {
-    
+    var viewDataSource: ViewDataSource
+    var articleRepositoryProtocol: ArticleRepositoryProtocol
+
+    init(viewDataSource: ViewDataSource, articleRepositoryProtocol: ArticleRepositoryProtocol) {
+        self.viewDataSource = viewDataSource
+        self.articleRepositoryProtocol = articleRepositoryProtocol
+    }
 }
 
 extension ArticleListViewModel: ArticleDataProtocol {
@@ -23,7 +29,7 @@ extension ArticleListViewModel: ArticleDataProtocol {
     }
     
     func requestArticles() {
-        
+        articleRepositoryProtocol.getArticlesFromDataSource(articleData: self)
     }
     
     

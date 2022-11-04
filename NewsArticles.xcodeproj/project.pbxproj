@@ -20,8 +20,10 @@
 		48C147DB291524AD003E9DCA /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147DA291524AD003E9DCA /* ViewControllerTests.swift */; };
 		48C147E0291527AB003E9DCA /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147DF291527AB003E9DCA /* ArticleListViewModel.swift */; };
 		48C147E329152940003E9DCA /* ArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147E229152940003E9DCA /* ArticleRepository.swift */; };
-		48C147E629152A20003E9DCA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147E529152A20003E9DCA /* APIManager.swift */; };
+		48C147E629152A20003E9DCA /* RESTServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147E529152A20003E9DCA /* RESTServiceManager.swift */; };
 		48C147E829152A59003E9DCA /* DataRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147E729152A59003E9DCA /* DataRequestProtocol.swift */; };
+		48C147EB29152F35003E9DCA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147EA29152F35003E9DCA /* APIManager.swift */; };
+		48C147EE29153003003E9DCA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147ED29153003003E9DCA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +61,10 @@
 		48C147DA291524AD003E9DCA /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		48C147DF291527AB003E9DCA /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		48C147E229152940003E9DCA /* ArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepository.swift; sourceTree = "<group>"; };
-		48C147E529152A20003E9DCA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		48C147E529152A20003E9DCA /* RESTServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTServiceManager.swift; sourceTree = "<group>"; };
 		48C147E729152A59003E9DCA /* DataRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestProtocol.swift; sourceTree = "<group>"; };
+		48C147EA29152F35003E9DCA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		48C147ED29153003003E9DCA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 		48C147DD29152755003E9DCA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				48C147EC29152FF3003E9DCA /* Utility */,
+				48C147E929152F25003E9DCA /* APIManager */,
 				48C147E429152A09003E9DCA /* Network */,
 				48C147DE29152760003E9DCA /* Articles */,
 			);
@@ -196,9 +202,25 @@
 		48C147E429152A09003E9DCA /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				48C147E529152A20003E9DCA /* APIManager.swift */,
+				48C147E529152A20003E9DCA /* RESTServiceManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		48C147E929152F25003E9DCA /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				48C147EA29152F35003E9DCA /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		48C147EC29152FF3003E9DCA /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				48C147ED29153003003E9DCA /* Constants.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,11 +357,13 @@
 				48C147D929152248003E9DCA /* Article.swift in Sources */,
 				48C147E829152A59003E9DCA /* DataRequestProtocol.swift in Sources */,
 				48C147A12914322D003E9DCA /* ArticleListViewController.swift in Sources */,
+				48C147EB29152F35003E9DCA /* APIManager.swift in Sources */,
 				48C1479D2914322D003E9DCA /* AppDelegate.swift in Sources */,
+				48C147EE29153003003E9DCA /* Constants.swift in Sources */,
 				48C1479F2914322D003E9DCA /* SceneDelegate.swift in Sources */,
 				48C147E329152940003E9DCA /* ArticleRepository.swift in Sources */,
 				48C147E0291527AB003E9DCA /* ArticleListViewModel.swift in Sources */,
-				48C147E629152A20003E9DCA /* APIManager.swift in Sources */,
+				48C147E629152A20003E9DCA /* RESTServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
