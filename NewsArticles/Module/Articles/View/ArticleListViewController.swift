@@ -8,7 +8,8 @@
 import UIKit
 
 protocol ViewDataSource {
-    func articlesReceived(characterList: [Article])
+    func articlesReceived(articleList: [Article])
+    func showViewForFailedArticleRequest()
 }
 
 class ArticleListViewController: UIViewController {
@@ -47,7 +48,14 @@ extension ArticleListViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 extension ArticleListViewController: ViewDataSource {
-    func articlesReceived(characterList: [Article]) {
-        
+    func showViewForFailedArticleRequest() {
+        debugPrint("Show failed request view")
+    }
+    
+    func articlesReceived(articleList: [Article]) {
+        self.articleItemList = articleList
+        DispatchQueue.main.async {
+            self.articleListTableView.reloadData()
+        }
     }
 }

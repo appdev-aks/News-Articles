@@ -17,6 +17,15 @@ class ArticleRepository {
 
 extension ArticleRepository: ArticleRepositoryProtocol {
     func getArticlesFromDataSource(articleData: ArticleDataProtocol) {
-        
+        let restServicemanager: DataRequestProtocol = RESTServiceManager()
+        restServicemanager.sendDataRequest(requestObject: RequestObj(apiManager: .getArticleList), callback: { (response: Result<Root, Error>) in
+            switch response {
+            case .success(let root):
+                articleData.populateArticleData(articles: root.articles)
+            case .failure(let error):
+                debugPrint(error.localizedDescription)
+                articleData.articleRequestFailed()
+            }
+        })
     }
 }

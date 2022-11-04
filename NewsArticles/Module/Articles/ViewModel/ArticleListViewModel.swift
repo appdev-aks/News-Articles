@@ -10,6 +10,7 @@ import Foundation
 protocol ArticleDataProtocol {
     func populateArticleData(articles: [Article])
     func requestArticles()
+    func articleRequestFailed()
 }
 
 class ArticleListViewModel {
@@ -23,9 +24,12 @@ class ArticleListViewModel {
 }
 
 extension ArticleListViewModel: ArticleDataProtocol {
+    func articleRequestFailed() {
+        viewDataSource.showViewForFailedArticleRequest()
+    }
     
     func populateArticleData(articles: [Article]) {
-        
+        viewDataSource.articlesReceived(articleList: articles)
     }
     
     func requestArticles() {

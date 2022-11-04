@@ -25,6 +25,7 @@
 		48C147EB29152F35003E9DCA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147EA29152F35003E9DCA /* APIManager.swift */; };
 		48C147EE29153003003E9DCA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147ED29153003003E9DCA /* Constants.swift */; };
 		48C147F02915384D003E9DCA /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147EF2915384D003E9DCA /* NetworkMonitor.swift */; };
+		48C147F329153EBD003E9DCA /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147F229153EBD003E9DCA /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		48C147EA29152F35003E9DCA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		48C147ED29153003003E9DCA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		48C147EF2915384D003E9DCA /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		48C147F229153EBD003E9DCA /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		48C147DD29152755003E9DCA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				48C147F129153E9D003E9DCA /* Mock */,
 				48C147EC29152FF3003E9DCA /* Utility */,
 				48C147E929152F25003E9DCA /* APIManager */,
 				48C147E429152A09003E9DCA /* Network */,
@@ -224,6 +227,14 @@
 				48C147ED29153003003E9DCA /* Constants.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		48C147F129153E9D003E9DCA /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				48C147F229153EBD003E9DCA /* MockData.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48C147F02915384D003E9DCA /* NetworkMonitor.swift in Sources */,
+				48C147F329153EBD003E9DCA /* MockData.swift in Sources */,
 				48C147D929152248003E9DCA /* Article.swift in Sources */,
 				48C147E829152A59003E9DCA /* DataRequestProtocol.swift in Sources */,
 				48C147A12914322D003E9DCA /* ArticleListViewController.swift in Sources */,
