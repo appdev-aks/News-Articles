@@ -33,6 +33,8 @@ class ArticleListViewController: UIViewController {
         loadingActivityIndicator.hidesWhenStopped = true
         articleListTableView.delegate = self
         articleListTableView.dataSource = self
+        
+        ArticleItemCell.registerWith(tableView: articleListTableView)
         viewModel.requestArticles()
     }
 }
@@ -43,7 +45,11 @@ extension ArticleListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        if let cell = tableView.dequeueReusableCell(withIdentifier: StoryBoards.CellIdentifier.articleItemCell.rawValue) as? ArticleItemCell {
+            cell.inflactWith(article: articleItemList[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
     }
 }
 

@@ -26,6 +26,9 @@
 		48C147EE29153003003E9DCA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147ED29153003003E9DCA /* Constants.swift */; };
 		48C147F02915384D003E9DCA /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147EF2915384D003E9DCA /* NetworkMonitor.swift */; };
 		48C147F329153EBD003E9DCA /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147F229153EBD003E9DCA /* MockData.swift */; };
+		48C147F5291546E4003E9DCA /* ArticleItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C147F4291546E4003E9DCA /* ArticleItemCell.xib */; };
+		48C147F729154712003E9DCA /* ArticleItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147F629154712003E9DCA /* ArticleItemCell.swift */; };
+		48C147F929154A25003E9DCA /* UtilsUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147F829154A25003E9DCA /* UtilsUIKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		48C147ED29153003003E9DCA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		48C147EF2915384D003E9DCA /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		48C147F229153EBD003E9DCA /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		48C147F4291546E4003E9DCA /* ArticleItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleItemCell.xib; sourceTree = "<group>"; };
+		48C147F629154712003E9DCA /* ArticleItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleItemCell.swift; sourceTree = "<group>"; };
+		48C147F829154A25003E9DCA /* UtilsUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsUIKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				48C147A02914322D003E9DCA /* ArticleListViewController.swift */,
+				48C147F4291546E4003E9DCA /* ArticleItemCell.xib */,
+				48C147F629154712003E9DCA /* ArticleItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				48C147ED29153003003E9DCA /* Constants.swift */,
+				48C147F829154A25003E9DCA /* UtilsUIKit.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -344,6 +353,7 @@
 				48C147A929143231003E9DCA /* LaunchScreen.storyboard in Resources */,
 				48C147A629143231003E9DCA /* Assets.xcassets in Resources */,
 				48C147A42914322D003E9DCA /* Main.storyboard in Resources */,
+				48C147F5291546E4003E9DCA /* ArticleItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +380,8 @@
 			files = (
 				48C147F02915384D003E9DCA /* NetworkMonitor.swift in Sources */,
 				48C147F329153EBD003E9DCA /* MockData.swift in Sources */,
+				48C147F929154A25003E9DCA /* UtilsUIKit.swift in Sources */,
+				48C147F729154712003E9DCA /* ArticleItemCell.swift in Sources */,
 				48C147D929152248003E9DCA /* Article.swift in Sources */,
 				48C147E829152A59003E9DCA /* DataRequestProtocol.swift in Sources */,
 				48C147A12914322D003E9DCA /* ArticleListViewController.swift in Sources */,
