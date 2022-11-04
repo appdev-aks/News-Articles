@@ -10,8 +10,8 @@ import XCTest
 
 final class ViewControllerTests: XCTestCase {
 
-    private var articleListViewController: ArticleListViewController!
     private var articleDetailView: ArticleDetailsViewController!
+    private var articleListViewController: ArticleListViewController!
     private var articles: [Article] = Array.init(repeating: Article(title: "Title", urlToImage: "url", content: "content", description: "desciption", source: nil), count: 3)
     
     override func setUpWithError() throws {

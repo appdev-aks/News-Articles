@@ -34,6 +34,10 @@
 		48C14800291555CF003E9DCA /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147FF291555CF003E9DCA /* ImageLoader.swift */; };
 		48C14803291556C2003E9DCA /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 48C14802291556C2003E9DCA /* Nuke */; };
 		48C1480729156208003E9DCA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C1480629156208003E9DCA /* Localizable.strings */; };
+		48C1480B29156BDB003E9DCA /* MockArticlesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48C1480929156645003E9DCA /* MockArticlesResponse.json */; };
+		48C1480C29156BDD003E9DCA /* MockArticlesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48C1480929156645003E9DCA /* MockArticlesResponse.json */; };
+		48C1480D29156BE1003E9DCA /* EmptyArticleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48C1480A2915665A003E9DCA /* EmptyArticleResponse.json */; };
+		48C1480E29156BE2003E9DCA /* EmptyArticleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48C1480A2915665A003E9DCA /* EmptyArticleResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,9 @@
 		48C147FC291551BF003E9DCA /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		48C147FF291555CF003E9DCA /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		48C1480629156208003E9DCA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		48C1480929156645003E9DCA /* MockArticlesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockArticlesResponse.json; sourceTree = "<group>"; };
+		48C1480A2915665A003E9DCA /* EmptyArticleResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyArticleResponse.json; sourceTree = "<group>"; };
+		48C1480F29156F02003E9DCA /* MockInvalidData.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = MockInvalidData.geojson; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,9 +262,20 @@
 		48C147F129153E9D003E9DCA /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				48C1480829156616003E9DCA /* Resouces */,
 				48C147F229153EBD003E9DCA /* MockData.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		48C1480829156616003E9DCA /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				48C1480929156645003E9DCA /* MockArticlesResponse.json */,
+				48C1480A2915665A003E9DCA /* EmptyArticleResponse.json */,
+				48C1480F29156F02003E9DCA /* MockInvalidData.geojson */,
+			);
+			path = Resouces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,7 +388,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C1480D29156BE1003E9DCA /* EmptyArticleResponse.json in Resources */,
 				48C1480729156208003E9DCA /* Localizable.strings in Resources */,
+				48C1480C29156BDD003E9DCA /* MockArticlesResponse.json in Resources */,
 				48C147A929143231003E9DCA /* LaunchScreen.storyboard in Resources */,
 				48C147A629143231003E9DCA /* Assets.xcassets in Resources */,
 				48C147A42914322D003E9DCA /* Main.storyboard in Resources */,
@@ -382,6 +402,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C1480B29156BDB003E9DCA /* MockArticlesResponse.json in Resources */,
+				48C1480E29156BE2003E9DCA /* EmptyArticleResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

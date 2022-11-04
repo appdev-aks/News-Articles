@@ -13,11 +13,19 @@ struct RequestObj {
 
 enum APIManager {
     case getArticleList
-    
+    case getValidMockArticleList
+    case getEmptyMockArticleList
+    case getMockInvalidResponse
+    case getNilResponse
+
+
     func getURL() -> URL? {
         switch self {
         case .getArticleList:
             return URL.articleList()
+        case .getValidMockArticleList, .getEmptyMockArticleList, .getMockInvalidResponse, .getNilResponse:
+            return URL.mockURL
+        
         }
     }
 }

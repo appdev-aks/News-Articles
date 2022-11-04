@@ -1,0 +1,97 @@
+{
+  "status": "ok",
+  "totalResults": 32,
+  "articles": [
+    {
+      "source": {
+        "id": "usa-today",
+        "name": "USA Today"
+      },
+      "author": "Paul Davidson and Elisabeth Buchwald, USA TODAY",
+      "title": "October Jobs report today: Live updates on unemployment, stock market - USA TODAY",
+      "description": "The October jobs report showed the economy added 261,000 jobs last month but a sharp slowdown is forecast. The unemployment rate rose to 3.7%.",
+      "url": "https://www.usatoday.com/story/money/economy/2022/11/04/october-jobs-report-stock-market-unemployment-live-updates/8258229001/",
+      "urlToImage": "https://www.gannett-cdn.com/presto/2022/11/04/USAT/a021a5cc-4bdf-44ce-bce8-bcd60ddd2e7d-GTY_1431462807.JPG?auto=webp&crop=5795,3260,x0,y294&format=pjpg&width=1200",
+      "publishedAt": "2022-11-04T14:26:15Z",
+      "content": "<ul><li>The unemployment rate rose from 3.5% to 3.7%, the Labor Department said Friday.</li><li>Economists had estimated that 190,000 jobs were added last month.</li><li>Employers added 261,000 jobs … [+8835 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CBS Sports"
+      },
+      "author": "",
+      "title": "Kyrie Irving refuses to apologize for publicizing antisemitic film, despite commissioner Adam Silver's wishes - CBS Sports",
+      "description": "The Nets guard said twice that he \"cannot be antisemitic if I know where I come from\"",
+      "url": "https://www.cbssports.com/nba/news/kyrie-irving-refuses-to-apologize-for-publicizing-antisemitic-film-despite-commissioner-adam-silvers-wishes/",
+      "urlToImage": "https://sportshub.cbsistatic.com/i/r/2022/11/03/02d186ad-8bdf-4557-b1cb-8ef8a6eb4ada/thumbnail/1200x675/987d56ff8ad2153ea94a039612504e1e/untitled-design-2022-11-03t120418-304.png",
+      "publishedAt": "2022-11-04T14:15:00Z",
+      "content": "[EDITOR'S NOTE: The Brooklyn Nets suspended Kyrie Irving for a minimum of five games without pay on Thursday night. Hours later, Irving issued an apology on Instagram. Articles by CBS Sports NBA writ… [+4559 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Evan Perez, Katelyn Polantz, Jeremy Herb",
+      "title": "Exclusive: DOJ mulling potential special counsel if Trump runs in 2024 - CNN",
+      "description": "As Donald Trump inches closer to launching another presidential run after the midterm election, Justice Department officials have discussed whether a Trump candidacy would create the need for a special counsel to oversee two sprawling federal investigations r…",
+      "url": "https://www.cnn.com/2022/11/03/politics/doj-trump-investigation-expansion-special-counsel/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/221103175210-03-doj-trump-investigation-expansion-special-counsel.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2022-11-04T13:35:00Z",
+      "content": "As Donald Trump inches closer to launching another presidential run after the midterm election, Justice Department officials have discussed whether a Trump candidacy would create the need for a speci… [+9177 chars]"
+    },
+    {
+      "source": {
+        "id": "the-wall-street-journal",
+        "name": "The Wall Street Journal"
+      },
+      "author": "Andrew Duehren",
+      "title": "U.S., Allies Set Parameters for Price Cap on Russian Oil - WSJ - The Wall Street Journal",
+      "description": "Cap will only apply to the first point of sale of Russian oil that takes place on land, U.S. and its allies have determined",
+      "url": "https://www.wsj.com/articles/u-s-allies-set-parameters-for-price-cap-on-russian-oil-11667554203",
+      "urlToImage": "https://images.wsj.net/im-658737/social",
+      "publishedAt": "2022-11-04T13:20:00Z",
+      "content": "WASHINGTONThe U.S. and its allies have reached agreement on which sales of Russian oil \r\nwill be subject to a price cap, racing to flesh out the details of the major new sanctions program before it b… [+418 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Bleeding Green Nation"
+      },
+      "author": "JosephSantoliquito",
+      "title": "Eagles vs. Texans: The good, the bad, and the ugly - Bleeding Green Nation",
+      "description": "Highlights and lowlights from Philadelphia’s Week 9 win.",
+      "url": "https://www.bleedinggreennation.com/2022/11/4/23440311/eagles-vs-texans-good-bad-ugly-javon-hargrave-recap-results-philadelphia-analysis-hurts-goedert-nfl",
+      "urlToImage": "https://cdn.vox-cdn.com/thumbor/XME02FjD-kZRCZYhn4AZuw4od6Y=/0x0:6000x3141/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/24168064/1438795630.jpg",
+      "publishedAt": "2022-11-04T13:05:10Z",
+      "content": "The Eagles went to 8-0 for the first time in franchise history on Thursday night, after a harder-than-it-looked 29-17 victory over the feisty Houston Texans at NRG Stadium.\r\nIt looked a little dicey … [+6763 chars]"
+    },
+    {
+      "source": {
+        "id": "the-washington-post",
+        "name": "The Washington Post"
+      },
+      "author": "Dan Diamond",
+      "title": "Clock runs out on efforts to make daylight saving time permanent - The Washington Post",
+      "description": "A bill to permanently “spring forward” has been stalled in Congress for more than seven months.",
+      "url": "https://www.washingtonpost.com/health/2022/11/04/permanent-daylight-saving-time/",
+      "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HQ2YRGSYENDELKYRQ5K543UJQU.jpeg&w=1440",
+      "publishedAt": "2022-11-04T12:38:50Z",
+      "content": "Comment on this story\r\nEarly this Sunday morning, Americans will engage in the annual autumnal ritual of falling back setting their clocks back one hour to conform with standard time.\r\nIf some lawmak… [+9737 chars]"
+    },
+    {
+      "source": {
+        "id": "the-washington-post",
+        "name": "The Washington Post"
+      },
+      "author": "Emily Guskin",
+      "title": "Post-ABC poll: Politically-motivated violence concerns most Americans - The Washington Post",
+      "description": "A Post-ABC poll finds that 9 in 10 Americans worry political divisions have intensified so much that there’s an increased risk of politically-motivated violence.",
+      "url": "https://www.washingtonpost.com/politics/2022/11/04/poll-americans-concern-political-violence/",
+      "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/BVGKJLWHYBZRJY7TIJBXUNLCC4.jpg&w=1440",
+      "publishedAt": "2022-11-04T12:22:21Z",
+      "content": "Comment on this story\r\nA wide and bipartisan majority of Americans worry there is increased danger of politically motivated violence in the United States, according to a Washington Post-ABC News poll… [+3970 chars]"
+    }
+  ]
+}
