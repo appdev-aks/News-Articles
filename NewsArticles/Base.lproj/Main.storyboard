@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kAN-ld-iHY">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kAN-ld-iHY">
                                 <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
@@ -45,7 +45,7 @@
         <!--Article Details View Controller-->
         <scene sceneID="82A-sB-Pjt">
             <objects>
-                <viewController storyboardIdentifier="ArticleDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mhw-fQ-VJM" customClass="ArticleDetailsViewController" customModule="MVVM_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mhw-fQ-VJM" customClass="ArticleDetailsViewController" customModule="NewsArticles" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jod-6j-dMK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

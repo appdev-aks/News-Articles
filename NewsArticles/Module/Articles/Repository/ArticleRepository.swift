@@ -11,9 +11,7 @@ protocol ArticleRepositoryProtocol {
     func getArticlesFromDataSource(articleData: ArticleDataProtocol)
 }
 
-class ArticleRepository {
-    
-}
+class ArticleRepository {}
 
 extension ArticleRepository: ArticleRepositoryProtocol {
     func getArticlesFromDataSource(articleData: ArticleDataProtocol) {

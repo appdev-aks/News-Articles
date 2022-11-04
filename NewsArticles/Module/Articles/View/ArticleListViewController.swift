@@ -33,9 +33,18 @@ class ArticleListViewController: UIViewController {
         loadingActivityIndicator.hidesWhenStopped = true
         articleListTableView.delegate = self
         articleListTableView.dataSource = self
-        
+        title = NSLocalizedString("ArticleListTitle", comment: "Title for article list")
         ArticleItemCell.registerWith(tableView: articleListTableView)
-        viewModel.requestArticles()
+        requestArticleData()
+    }
+    
+    fileprivate func requestArticleData() {
+        if NetworkMonitor.shared.isConnected {
+            isLoading = true
+            self.viewModel.requestArticles()
+        }else {
+            debugPrint("display error or option to retry")
+        }
     }
 }
 
@@ -69,6 +78,7 @@ extension ArticleListViewController: ViewDataSource {
         self.articleItemList = articleList
         DispatchQueue.main.async {
             self.articleListTableView.reloadData()
+            self.isLoading = false
         }
     }
 }

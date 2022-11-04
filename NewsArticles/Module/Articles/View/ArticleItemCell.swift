@@ -17,6 +17,7 @@ class ArticleItemCell: UITableViewCell {
     func inflactWith(article: Article){
         titleLabel.text = article.title
         sourceLabel.text = article.source?.name ?? ""
+        ImageLoader.loadImage(url: article.urlToImage ?? "", imageView: articleImageView)
     }
     
     override class func awakeFromNib() {
