@@ -2,7 +2,7 @@
 //  UtilsUIKit.swift
 //  NewsArticles
 //
-//  Created by Akshay Pure on 04/11/22.
+//  Created by Aks_dev on 04/11/22.
 //
 
 import Foundation
@@ -14,3 +14,10 @@ extension UITableViewCell {
     }
 }
 
+class UtilsUIKit {
+    static func getViewControllerWith(storyBoardName: StoryBoards.StoryboardNames, viewControllerId: StoryBoards.ViewControllerIdentifier) -> UIViewController? {
+        let storyboard = UIStoryboard(name: storyBoardName.rawValue, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: viewControllerId.rawValue)
+        return viewController
+    }
+}

@@ -2,7 +2,7 @@
 //  ArticleItemCell.swift
 //  NewsArticles
 //
-//  Created by Akshay Pure on 04/11/22.
+//  Created by Aks_dev on 04/11/22.
 //
 
 import Foundation

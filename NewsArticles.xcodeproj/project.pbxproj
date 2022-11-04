@@ -29,6 +29,8 @@
 		48C147F5291546E4003E9DCA /* ArticleItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C147F4291546E4003E9DCA /* ArticleItemCell.xib */; };
 		48C147F729154712003E9DCA /* ArticleItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147F629154712003E9DCA /* ArticleItemCell.swift */; };
 		48C147F929154A25003E9DCA /* UtilsUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147F829154A25003E9DCA /* UtilsUIKit.swift */; };
+		48C147FB29154E50003E9DCA /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147FA29154E50003E9DCA /* ArticleDetailsViewController.swift */; };
+		48C147FD291551BF003E9DCA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147FC291551BF003E9DCA /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		48C147F4291546E4003E9DCA /* ArticleItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleItemCell.xib; sourceTree = "<group>"; };
 		48C147F629154712003E9DCA /* ArticleItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleItemCell.swift; sourceTree = "<group>"; };
 		48C147F829154A25003E9DCA /* UtilsUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsUIKit.swift; sourceTree = "<group>"; };
+		48C147FA29154E50003E9DCA /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
+		48C147FC291551BF003E9DCA /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 				48C147A02914322D003E9DCA /* ArticleListViewController.swift */,
 				48C147F4291546E4003E9DCA /* ArticleItemCell.xib */,
 				48C147F629154712003E9DCA /* ArticleItemCell.swift */,
+				48C147FA29154E50003E9DCA /* ArticleDetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			children = (
 				48C147ED29153003003E9DCA /* Constants.swift */,
 				48C147F829154A25003E9DCA /* UtilsUIKit.swift */,
+				48C147FC291551BF003E9DCA /* Utils.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 				48C147D929152248003E9DCA /* Article.swift in Sources */,
 				48C147E829152A59003E9DCA /* DataRequestProtocol.swift in Sources */,
 				48C147A12914322D003E9DCA /* ArticleListViewController.swift in Sources */,
+				48C147FD291551BF003E9DCA /* Utils.swift in Sources */,
 				48C147EB29152F35003E9DCA /* APIManager.swift in Sources */,
 				48C1479D2914322D003E9DCA /* AppDelegate.swift in Sources */,
 				48C147EE29153003003E9DCA /* Constants.swift in Sources */,
@@ -392,6 +399,7 @@
 				48C147E329152940003E9DCA /* ArticleRepository.swift in Sources */,
 				48C147E0291527AB003E9DCA /* ArticleListViewModel.swift in Sources */,
 				48C147E629152A20003E9DCA /* RESTServiceManager.swift in Sources */,
+				48C147FB29154E50003E9DCA /* ArticleDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

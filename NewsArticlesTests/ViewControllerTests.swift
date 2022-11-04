@@ -10,12 +10,13 @@ import XCTest
 
 final class ViewControllerTests: XCTestCase {
 
-    var articleListViewController: ArticleListViewController!
-    var articles: [Article] = Array.init(repeating: Article(title: "Title", urlToImage: "url", content: "content", description: "desciption", source: nil), count: 3)
+    private var articleListViewController: ArticleListViewController!
+    private var articleDetailView: ArticleDetailsViewController!
+    private var articles: [Article] = Array.init(repeating: Article(title: "Title", urlToImage: "url", content: "content", description: "desciption", source: nil), count: 3)
     
     override func setUpWithError() throws {
-        guard let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ArticleListViewController") as? ArticleListViewController else {
-            return XCTFail("Could not instantiate ViewController from main storyboard")
+        guard let vc = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .articleListController) as? ArticleListViewController else {
+            return XCTFail("Failed to instantiate ViewController from storyboard")
         }
         articleListViewController = vc
         articleListViewController.articleItemList = articles
@@ -24,7 +25,16 @@ final class ViewControllerTests: XCTestCase {
     
     func testControllerHasTableView() {
         XCTAssertNotNil(articleListViewController.articleListTableView,
-                        "Controller should have a tableview")
+                        "Controller must have a tableview")
+    }
+    
+    func testLoadDetailedView() throws {
+        guard let articleDetailsViewController = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .articleDetailsController) as? ArticleDetailsViewController else {
+            return XCTFail("Failed to instantiate ViewController from storyboard")
+        }
+        articleDetailsViewController.article = Article(title: "title", urlToImage: "", content: "", description: "", source: Source(name: ""))
+        articleDetailsViewController.loadViewIfNeeded()
+        XCTAssertEqual(articleDetailsViewController.article?.title, "title")
     }
     
     func testrealTableViewHasCells() {
