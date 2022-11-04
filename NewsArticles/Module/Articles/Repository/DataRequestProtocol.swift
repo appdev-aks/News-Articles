@@ -7,6 +7,6 @@
 
 
 protocol DataRequestProtocol {
-    func sendDataRequest()
+    func sendDataRequest<T: Decodable>(requestObject: RequestObj, callback: @escaping ((Result<T, Error>) -> ()))
 }
 
