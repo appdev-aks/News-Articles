@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UWj-Zq-FSW">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -24,18 +25,43 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kAN-ld-iHY">
                                 <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGt-yF-Sn8" userLabel="retryView">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5J0-YE-GrF">
+                                        <rect key="frame" x="100" y="340" width="193" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Retry"/>
+                                        <connections>
+                                            <action selector="reloadArticles:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S3e-af-3l1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="5J0-YE-GrF" firstAttribute="centerY" secondItem="FGt-yF-Sn8" secondAttribute="centerY" id="JKx-D0-hD1"/>
+                                    <constraint firstItem="5J0-YE-GrF" firstAttribute="centerX" secondItem="FGt-yF-Sn8" secondAttribute="centerX" id="MPY-zo-pme"/>
+                                    <constraint firstAttribute="trailing" secondItem="5J0-YE-GrF" secondAttribute="trailing" constant="100" id="grB-iB-Sum"/>
+                                    <constraint firstItem="5J0-YE-GrF" firstAttribute="leading" secondItem="FGt-yF-Sn8" secondAttribute="leading" constant="100" id="qhT-7A-dHh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kAN-ld-iHY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HFL-FK-TS4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FGt-yF-Sn8" secondAttribute="trailing" id="QmZ-HI-Lm4"/>
                             <constraint firstItem="kAN-ld-iHY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uhw-rZ-a2N"/>
+                            <constraint firstItem="FGt-yF-Sn8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eX7-h8-QlO"/>
+                            <constraint firstItem="FGt-yF-Sn8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yM0-F5-39d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FGt-yF-Sn8" secondAttribute="bottom" id="yl4-8w-fNd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W57-eN-QQE"/>
                     <connections>
                         <outlet property="articleListTableView" destination="MM7-a1-HGz" id="faf-B3-a8W"/>
                         <outlet property="loadingActivityIndicator" destination="kAN-ld-iHY" id="AGZ-PY-ePi"/>
+                        <outlet property="retryView" destination="FGt-yF-Sn8" id="vPW-0S-OIj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

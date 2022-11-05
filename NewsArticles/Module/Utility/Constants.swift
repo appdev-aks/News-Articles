@@ -10,7 +10,7 @@ import Foundation
 enum APIError: Error {
     case networkConnectionFailed
     case responseDataError
-    case unexpectedDataReceived
+    case requestFailure
 }
 
 enum StoryBoards {

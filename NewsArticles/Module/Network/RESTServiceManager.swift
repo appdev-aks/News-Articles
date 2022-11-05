@@ -19,13 +19,15 @@ class RESTServiceManager {
                         completion(.success(result))
                     } catch let error {
                         debugPrint(error.localizedDescription)
-                        completion(.failure(APIError.unexpectedDataReceived))
+                        completion(.failure(APIError.responseDataError))
                     }
                 }else {
                     completion(.failure(APIError.responseDataError))
                 }
             }
             urlSession.resume()
+        } else {
+            completion(.failure(APIError.requestFailure))
         }
     }
 }

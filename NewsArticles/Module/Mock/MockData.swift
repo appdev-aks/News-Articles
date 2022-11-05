@@ -55,7 +55,7 @@ class MockRestAPI: DataRequestProtocol {
                 callback(.success(result))
             } catch let error {
                 debugPrint(error.localizedDescription)
-                callback(.failure(APIError.unexpectedDataReceived))
+                callback(.failure(APIError.responseDataError))
             }
         }else {
             callback(.failure(APIError.responseDataError))

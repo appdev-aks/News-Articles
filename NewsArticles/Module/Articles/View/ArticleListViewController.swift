@@ -16,6 +16,7 @@ class ArticleListViewController: UIViewController {
 
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var articleListTableView: UITableView!
+    @IBOutlet weak var retryView: UIView!
     var articleItemList: [Article] = []
     
     lazy var viewModel: ArticleDataProtocol = {
@@ -25,6 +26,12 @@ class ArticleListViewController: UIViewController {
     var isLoading = false {
         didSet {
             isLoading ? loadingActivityIndicator.startAnimating() : loadingActivityIndicator.stopAnimating()
+        }
+    }
+    
+    var dataFetched = false {
+        didSet {
+             retryView.isHidden = dataFetched
         }
     }
     
@@ -38,13 +45,12 @@ class ArticleListViewController: UIViewController {
         requestArticleData()
     }
     
+    @IBAction func reloadArticles(_ sender: Any) {
+        requestArticleData()
+    }
+    
     fileprivate func requestArticleData() {
-        if NetworkMonitor.shared.isConnected {
-            isLoading = true
-            self.viewModel.requestArticles()
-        }else {
-            debugPrint("display error or option to retry")
-        }
+        self.viewModel.requestArticles()
     }
 }
 
@@ -71,6 +77,10 @@ extension ArticleListViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension ArticleListViewController: ViewDataSource {
     func showViewForFailedArticleRequest() {
+        DispatchQueue.main.async {
+            self.isLoading = false
+            self.dataFetched = false
+        }
         debugPrint("Show failed request view")
     }
     
@@ -79,6 +89,7 @@ extension ArticleListViewController: ViewDataSource {
         DispatchQueue.main.async {
             self.articleListTableView.reloadData()
             self.isLoading = false
+            self.dataFetched = true
         }
     }
 }
