@@ -14,22 +14,22 @@ protocol ViewDataSource {
 
 class ArticleListViewController: UIViewController {
 
-    @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var loadingActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var articleListTableView: UITableView!
-    @IBOutlet weak var retryView: UIView!
+    @IBOutlet private weak var retryView: UIView!
     var articleItemList: [Article] = []
     
     lazy var viewModel: ArticleDataProtocol = {
         ArticleListViewModel.init(viewDataSource: self, articleRepositoryProtocol: ArticleRepository())
     }() as ArticleDataProtocol
     
-    var isLoading = false {
+    private var isLoading = false {
         didSet {
             isLoading ? loadingActivityIndicator.startAnimating() : loadingActivityIndicator.stopAnimating()
         }
     }
     
-    var dataFetched = false {
+    private var dataFetched = false {
         didSet {
              retryView.isHidden = dataFetched
         }

@@ -7,12 +7,13 @@
 
 import Foundation
 import UIKit
+import Nuke
 
 class ArticleItemCell: UITableViewCell {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var sourceLabel: UILabel!
-    @IBOutlet weak var articleImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var sourceLabel: UILabel!
+    @IBOutlet private weak var articleImageView: UIImageView!
 
     func inflactWith(article: Article){
         titleLabel.text = article.title

@@ -12,10 +12,10 @@ class ArticleDetailsViewController: UIViewController {
     
     var article: Article?
     
-    @IBOutlet weak var imageArticle: UIImageView!
-    @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var labelDescription: UILabel!
-    @IBOutlet weak var labelDate: UILabel!
+    @IBOutlet private weak var imageArticle: UIImageView!
+    @IBOutlet private weak var labelTitle: UILabel!
+    @IBOutlet private weak var labelDescription: UILabel!
+    @IBOutlet private weak var labelDate: UILabel!
 
     override func viewDidLoad() {
         if let article = article {
