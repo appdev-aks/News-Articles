@@ -8,9 +8,9 @@
 import Foundation
 
 class RESTServiceManager {
-    func fetchDataUsing<T: Decodable>(requestObject: RequestObj, completion: @escaping  (Result<T, Error>) -> ()) {
+    func fetchDataUsing<T: Decodable>(requestObject: RequestObj, completion: @escaping  (Result<T, Error>) -> Void) {
         if let url = requestObject.apiManager.getURL() {
-            let urlSession = URLSession.shared.dataTask(with: url) { responseData, httpResponse, error in
+            let urlSession = URLSession.shared.dataTask(with: url) { responseData, _, error in
         
                 if let response = responseData {
                     let decoder = JSONDecoder()
@@ -21,7 +21,7 @@ class RESTServiceManager {
                         debugPrint(error.localizedDescription)
                         completion(.failure(APIError.responseDataError))
                     }
-                }else {
+                } else {
                     completion(.failure(APIError.responseDataError))
                 }
             }
@@ -33,7 +33,7 @@ class RESTServiceManager {
 }
 
 extension RESTServiceManager: DataRequestProtocol {
-    func sendDataRequest<T>(requestObject: RequestObj, callback: @escaping ((Result<T, Error>) -> ())) where T : Decodable {
+    func sendDataRequest<T>(requestObject: RequestObj, callback: @escaping ((Result<T, Error>) -> Void)) where T: Decodable {
         fetchDataUsing(requestObject: requestObject, completion: callback)
     }
 }

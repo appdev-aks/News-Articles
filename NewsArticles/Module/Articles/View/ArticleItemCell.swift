@@ -15,7 +15,7 @@ class ArticleItemCell: UITableViewCell {
     @IBOutlet private weak var sourceLabel: UILabel!
     @IBOutlet private weak var articleImageView: UIImageView!
 
-    func inflactWith(article: Article){
+    func inflactWith(article: Article) {
         titleLabel.text = article.title
         sourceLabel.text = article.source?.name ?? ""
         ImageLoader.loadImage(url: article.urlToImage ?? "", imageView: articleImageView)

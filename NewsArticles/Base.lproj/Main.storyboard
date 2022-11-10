@@ -29,9 +29,9 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5J0-YE-GrF">
-                                        <rect key="frame" x="100" y="340" width="193" height="35"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Retry"/>
+                                        <rect key="frame" x="100" y="342.66666666666669" width="193" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Retry"/>
                                         <connections>
                                             <action selector="reloadArticles:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S3e-af-3l1"/>
                                         </connections>

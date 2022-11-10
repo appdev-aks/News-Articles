@@ -31,7 +31,7 @@ class MockArticleRepository: ArticleRepositoryProtocol {
 }
 
 class MockRestAPI: DataRequestProtocol {
-    func sendDataRequest<T>(requestObject: RequestObj, callback: @escaping ((Result<T, Error>) -> ())) where T : Decodable {
+    func sendDataRequest<T>(requestObject: RequestObj, callback: @escaping ((Result<T, Error>) -> Void)) where T: Decodable {
         
         var responseData: String!
         
@@ -57,7 +57,7 @@ class MockRestAPI: DataRequestProtocol {
                 debugPrint(error.localizedDescription)
                 callback(.failure(APIError.responseDataError))
             }
-        }else {
+        } else {
             callback(.failure(APIError.responseDataError))
         }
     }
@@ -68,8 +68,6 @@ private struct ArticleResponseFiles {
     static let mockEmptyArticleResponse = "EmptyArticleResponse"
     static let mockInvalidData = "MockInvalidData"
 }
-
-
 
 class MockDataResources {
     

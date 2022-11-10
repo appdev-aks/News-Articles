@@ -18,7 +18,6 @@ enum APIManager {
     case getMockInvalidResponse
     case getNilResponse
 
-
     func getURL() -> URL? {
         switch self {
         case .getArticleList:

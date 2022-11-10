@@ -1,0 +1,58 @@
+disabled_rules:
+  - todo
+opt_in_rules:  
+ - empty_count
+ - empty_string
+
+cyclomatic_complexity:
+  ignores_case_statements: true
+  warning: 20
+
+identifier_name:
+  allowed_symbols: "_"
+  min_length: 2
+  max_length: 
+    warning: 90
+    error: 1000
+  excluded:
+    - id
+    - vc
+
+trailing_whitespace:
+  ignores_empty_lines: true
+
+trailing_comma:
+  mandatory_comma: true
+
+line_length:
+    warning: 200
+    error: 300
+    ignores_function_declarations: true
+    ignores_comments: true
+    ignores_urls: true
+
+type_body_length:
+  warning: 300
+  error: 500
+
+file_length:
+    warning: 600
+    error: 800
+
+force_cast: warning
+
+included:
+  - NewsArticles
+  
+excluded:
+  - builds
+  - Vendors
+
+colon: 
+  severity: error
+comma: error
+
+legacy_constant: error
+legacy_constructor: error
+trailing_newline: error
+trailing_semicolon: error

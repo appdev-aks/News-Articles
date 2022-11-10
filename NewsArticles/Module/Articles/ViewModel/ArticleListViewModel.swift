@@ -36,5 +36,4 @@ extension ArticleListViewModel: ArticleDataProtocol {
         articleRepositoryProtocol.getArticlesFromDataSource(articleData: self)
     }
     
-    
 }

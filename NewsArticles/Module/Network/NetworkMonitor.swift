@@ -15,11 +15,11 @@ class NetworkMonitor {
     
     public private(set) var isConnected: Bool = false
  
-    private init(){
+    private init() {
         monitor = NWPathMonitor()
     }
     
-    public func startMonitoring(){
+    public func startMonitoring() {
         monitor.start(queue: queue)
         monitor.pathUpdateHandler = {[weak self] path in
             self?.isConnected = path.status != .unsatisfied

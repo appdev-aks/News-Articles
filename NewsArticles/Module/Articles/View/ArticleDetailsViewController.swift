@@ -18,6 +18,7 @@ class ArticleDetailsViewController: UIViewController {
     @IBOutlet private weak var labelDate: UILabel!
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         if let article = article {
             labelTitle.text = article.title
             labelDescription.text = article.description

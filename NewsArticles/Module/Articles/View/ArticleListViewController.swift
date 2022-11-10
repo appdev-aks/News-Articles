@@ -68,9 +68,9 @@ extension ArticleListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let articleDetailsController = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .articleDetailsController) as? ArticleDetailsViewController{
+        if let articleDetailsController = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .articleDetailsController) as? ArticleDetailsViewController {
             articleDetailsController.article = articleItemList[safeIndex: indexPath.row]
-            self.present(articleDetailsController, animated:true, completion:nil)
+            self.present(articleDetailsController, animated: true, completion: nil)
         }
     }
 }
