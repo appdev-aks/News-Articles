@@ -1,0 +1,22 @@
+
+
+.DS_Store
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+
+# Swift Package Manager
+Package.pins
+Package.resolved
+*.swiftpm
+
+
+## User settings
+xcuserdata/
+
+builds
+*.xcarchive
+
+Config.xcconfig
