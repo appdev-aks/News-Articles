@@ -20,7 +20,6 @@ extension URL {
     static var mockURL = URL(string: "http://mockurl.com")
     static var mockInvalidURL = URL(string: "invalid URL")
 
-    #warning("Config file should be added to gitignore file")
     static func articleList(withID apiKey: String = Bundle.main.infoDictionary?["API_KEY"] as? String ?? "") -> URL? {
         URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=\(apiKey)")
     }
