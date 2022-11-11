@@ -1,0 +1,13 @@
+//
+//  Config.xcconfig
+//  NewsArticles
+//
+//  Created by Aks_dev on 11/11/22.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// This file should not be added in gitignore file
+
+API_KEY = 946596b9517344ec8bfea9477889e08d
