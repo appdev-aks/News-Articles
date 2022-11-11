@@ -35,6 +35,16 @@ final class NewsArticlesTests: XCTestCase {
         articleListView.viewModel.requestArticles()
         XCTAssertEqual(articleListView.articleItemList.count, 0)
     }
+    
+    func testNilDataResponse() throws {
+        articleListView.loadViewIfNeeded()
+        let mockRepo = MockArticleRepository(apiManager: .getNilResponse)
+        articleListView.viewModel = ArticleListViewModel(viewDataSource: articleListView, articleRepositoryProtocol: mockRepo)
+        articleListView.viewModel.requestArticles()
+        XCTAssertEqual(articleListView.errorMessage, APIError.responseDataError.getErrorMessage())
+        XCTAssertEqual(articleListView.articleItemList.count, 0)
+    }
+
 
     func testInvalidArticleDataResponse() throws {
         articleListView.loadViewIfNeeded()
@@ -42,17 +52,19 @@ final class NewsArticlesTests: XCTestCase {
         articleListView.viewModel = ArticleListViewModel(viewDataSource: articleListView, articleRepositoryProtocol: mockRepo)
         
         articleListView.viewModel.requestArticles()
+        XCTAssertEqual(articleListView.errorMessage, APIError.responseDataError.getErrorMessage())
         XCTAssertNotNil(mockRepo.mockError)
         XCTAssertEqual(articleListView.articleItemList.count, 0)
     }
     
-    func testNilArticleDataResponse() throws {
+    func testDatarequestFromInvalidURL() throws {
         articleListView.loadViewIfNeeded()
-        let mockRepo = MockArticleRepository(apiManager: .getNilResponse)
+        let mockRepo = MockArticleRepository(apiManager: .getResponseFromInvalidUrl)
         articleListView.viewModel = ArticleListViewModel(viewDataSource: articleListView, articleRepositoryProtocol: mockRepo)
         
         articleListView.viewModel.requestArticles()
         XCTAssertNotNil(mockRepo.mockError)
+        XCTAssertEqual(articleListView.errorMessage, APIError.requestFailure.getErrorMessage())
         XCTAssertEqual(articleListView.articleItemList.count, 0)
     }
     

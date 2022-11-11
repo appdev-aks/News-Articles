@@ -9,16 +9,18 @@ import UIKit
 
 protocol ViewDataSource {
     func articlesReceived(articleList: [Article])
-    func showViewForFailedArticleRequest()
+    func showViewForFailedArticleRequest(error: APIError)
 }
 
 class ArticleListViewController: UIViewController {
 
     @IBOutlet private weak var loadingActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var articleListTableView: UITableView!
-    @IBOutlet private weak var retryView: UIView!
+    @IBOutlet private weak var retryView: UIStackView!
+    @IBOutlet private weak var errorMessageLabel: UILabel!
     var articleItemList: [Article] = []
-    
+    var errorMessage: String = ""
+
     lazy var viewModel: ArticleDataProtocol = {
         ArticleListViewModel.init(viewDataSource: self, articleRepositoryProtocol: ArticleRepository())
     }() as ArticleDataProtocol
@@ -76,8 +78,10 @@ extension ArticleListViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 extension ArticleListViewController: ViewDataSource {
-    func showViewForFailedArticleRequest() {
+    func showViewForFailedArticleRequest(error: APIError) {
+        errorMessage = error.getErrorMessage()
         DispatchQueue.main.async {
+            self.errorMessageLabel.text = self.errorMessage
             self.isLoading = false
             self.dataFetched = false
         }

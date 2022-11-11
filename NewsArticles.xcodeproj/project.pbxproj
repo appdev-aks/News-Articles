@@ -34,10 +34,15 @@
 		48C14800291555CF003E9DCA /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147FF291555CF003E9DCA /* ImageLoader.swift */; };
 		48C14803291556C2003E9DCA /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 48C14802291556C2003E9DCA /* Nuke */; };
 		48C1480729156208003E9DCA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C1480629156208003E9DCA /* Localizable.strings */; };
-		48C1480B29156BDB003E9DCA /* MockArticlesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48C1480929156645003E9DCA /* MockArticlesResponse.json */; };
-		48C1480C29156BDD003E9DCA /* MockArticlesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48C1480929156645003E9DCA /* MockArticlesResponse.json */; };
-		48C1480D29156BE1003E9DCA /* EmptyArticleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48C1480A2915665A003E9DCA /* EmptyArticleResponse.json */; };
-		48C1480E29156BE2003E9DCA /* EmptyArticleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48C1480A2915665A003E9DCA /* EmptyArticleResponse.json */; };
+		48EEEF64291E1BBE006CEAAF /* MockInvalidData.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EEEF61291E1BBE006CEAAF /* MockInvalidData.json */; };
+		48EEEF65291E1BBE006CEAAF /* MockInvalidData.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EEEF61291E1BBE006CEAAF /* MockInvalidData.json */; };
+		48EEEF66291E1BBE006CEAAF /* MockInvalidData.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EEEF61291E1BBE006CEAAF /* MockInvalidData.json */; };
+		48EEEF67291E1BBE006CEAAF /* MockArticlesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EEEF62291E1BBE006CEAAF /* MockArticlesResponse.json */; };
+		48EEEF68291E1BBE006CEAAF /* MockArticlesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EEEF62291E1BBE006CEAAF /* MockArticlesResponse.json */; };
+		48EEEF69291E1BBE006CEAAF /* MockArticlesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EEEF62291E1BBE006CEAAF /* MockArticlesResponse.json */; };
+		48EEEF6A291E1BBE006CEAAF /* EmptyArticleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EEEF63291E1BBE006CEAAF /* EmptyArticleResponse.json */; };
+		48EEEF6B291E1BBE006CEAAF /* EmptyArticleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EEEF63291E1BBE006CEAAF /* EmptyArticleResponse.json */; };
+		48EEEF6C291E1BBE006CEAAF /* EmptyArticleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EEEF63291E1BBE006CEAAF /* EmptyArticleResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,9 +93,9 @@
 		48C147FC291551BF003E9DCA /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		48C147FF291555CF003E9DCA /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		48C1480629156208003E9DCA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		48C1480929156645003E9DCA /* MockArticlesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockArticlesResponse.json; sourceTree = "<group>"; };
-		48C1480A2915665A003E9DCA /* EmptyArticleResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyArticleResponse.json; sourceTree = "<group>"; };
-		48C1480F29156F02003E9DCA /* MockInvalidData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockInvalidData.json; sourceTree = "<group>"; };
+		48EEEF61291E1BBE006CEAAF /* MockInvalidData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MockInvalidData.json; path = NewsArticles/Module/Mock/MockInvalidData.json; sourceTree = SOURCE_ROOT; };
+		48EEEF62291E1BBE006CEAAF /* MockArticlesResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MockArticlesResponse.json; path = NewsArticles/Module/Mock/MockArticlesResponse.json; sourceTree = SOURCE_ROOT; };
+		48EEEF63291E1BBE006CEAAF /* EmptyArticleResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EmptyArticleResponse.json; path = NewsArticles/Module/Mock/EmptyArticleResponse.json; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,9 +276,9 @@
 		48C1480829156616003E9DCA /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
-				48C1480929156645003E9DCA /* MockArticlesResponse.json */,
-				48C1480A2915665A003E9DCA /* EmptyArticleResponse.json */,
-				48C1480F29156F02003E9DCA /* MockInvalidData.json */,
+				48EEEF63291E1BBE006CEAAF /* EmptyArticleResponse.json */,
+				48EEEF62291E1BBE006CEAAF /* MockArticlesResponse.json */,
+				48EEEF61291E1BBE006CEAAF /* MockInvalidData.json */,
 			);
 			path = Resouces;
 			sourceTree = "<group>";
@@ -389,13 +394,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48C1480D29156BE1003E9DCA /* EmptyArticleResponse.json in Resources */,
 				48C1480729156208003E9DCA /* Localizable.strings in Resources */,
-				48C1480C29156BDD003E9DCA /* MockArticlesResponse.json in Resources */,
 				48C147A929143231003E9DCA /* LaunchScreen.storyboard in Resources */,
 				48C147A629143231003E9DCA /* Assets.xcassets in Resources */,
+				48EEEF6A291E1BBE006CEAAF /* EmptyArticleResponse.json in Resources */,
 				48C147A42914322D003E9DCA /* Main.storyboard in Resources */,
 				48C147F5291546E4003E9DCA /* ArticleItemCell.xib in Resources */,
+				48EEEF64291E1BBE006CEAAF /* MockInvalidData.json in Resources */,
+				48EEEF67291E1BBE006CEAAF /* MockArticlesResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,8 +409,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48C1480B29156BDB003E9DCA /* MockArticlesResponse.json in Resources */,
-				48C1480E29156BE2003E9DCA /* EmptyArticleResponse.json in Resources */,
+				48EEEF6B291E1BBE006CEAAF /* EmptyArticleResponse.json in Resources */,
+				48EEEF65291E1BBE006CEAAF /* MockInvalidData.json in Resources */,
+				48EEEF68291E1BBE006CEAAF /* MockArticlesResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +419,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48EEEF6C291E1BBE006CEAAF /* EmptyArticleResponse.json in Resources */,
+				48EEEF66291E1BBE006CEAAF /* MockInvalidData.json in Resources */,
+				48EEEF69291E1BBE006CEAAF /* MockArticlesResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

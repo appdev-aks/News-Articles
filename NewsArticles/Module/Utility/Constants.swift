@@ -11,6 +11,17 @@ enum APIError: Error {
     case networkConnectionFailed
     case responseDataError
     case requestFailure
+    
+    func getErrorMessage() -> String {
+        switch self {
+        case .networkConnectionFailed:
+            return NSLocalizedString("networkConnectionError", comment: "")
+        case .responseDataError:
+            return NSLocalizedString("responseDataError", comment: "")
+        case .requestFailure:
+            return NSLocalizedString("requestFailure", comment: "")
+        }
+    }
 }
 
 enum StoryBoards {

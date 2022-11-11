@@ -17,19 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MM7-a1-HGz">
-                                <rect key="frame" x="0.0" y="59" width="393" height="767"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MM7-a1-HGz">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kAN-ld-iHY">
                                 <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGt-yF-Sn8" userLabel="retryView">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UQx-cG-QjD">
+                                <rect key="frame" x="40" y="399.66666666666669" width="313" height="53"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2T-kM-3yO">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5J0-YE-GrF">
-                                        <rect key="frame" x="100" y="342.66666666666669" width="193" height="30"/>
+                                        <rect key="frame" x="0.0" y="23" width="313" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Retry"/>
                                         <connections>
@@ -37,31 +42,28 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="5J0-YE-GrF" firstAttribute="centerY" secondItem="FGt-yF-Sn8" secondAttribute="centerY" id="JKx-D0-hD1"/>
-                                    <constraint firstItem="5J0-YE-GrF" firstAttribute="centerX" secondItem="FGt-yF-Sn8" secondAttribute="centerX" id="MPY-zo-pme"/>
-                                    <constraint firstAttribute="trailing" secondItem="5J0-YE-GrF" secondAttribute="trailing" constant="100" id="grB-iB-Sum"/>
-                                    <constraint firstItem="5J0-YE-GrF" firstAttribute="leading" secondItem="FGt-yF-Sn8" secondAttribute="leading" constant="100" id="qhT-7A-dHh"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="MM7-a1-HGz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3Eq-oX-Tdh"/>
+                            <constraint firstItem="UQx-cG-QjD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6tm-sn-InQ"/>
                             <constraint firstItem="kAN-ld-iHY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HFL-FK-TS4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FGt-yF-Sn8" secondAttribute="trailing" id="QmZ-HI-Lm4"/>
+                            <constraint firstItem="MM7-a1-HGz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Qfq-Nr-Jiy"/>
+                            <constraint firstItem="MM7-a1-HGz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="T9E-jf-EgE"/>
                             <constraint firstItem="kAN-ld-iHY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uhw-rZ-a2N"/>
-                            <constraint firstItem="FGt-yF-Sn8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eX7-h8-QlO"/>
-                            <constraint firstItem="FGt-yF-Sn8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yM0-F5-39d"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FGt-yF-Sn8" secondAttribute="bottom" id="yl4-8w-fNd"/>
+                            <constraint firstItem="MM7-a1-HGz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ZOW-Za-Sck"/>
+                            <constraint firstItem="UQx-cG-QjD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="dfm-ra-lg1"/>
+                            <constraint firstAttribute="trailing" secondItem="UQx-cG-QjD" secondAttribute="trailing" constant="40" id="gn5-m4-oSk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W57-eN-QQE"/>
                     <connections>
                         <outlet property="articleListTableView" destination="MM7-a1-HGz" id="faf-B3-a8W"/>
+                        <outlet property="errorMessageLabel" destination="T2T-kM-3yO" id="Ft9-ks-lJc"/>
                         <outlet property="loadingActivityIndicator" destination="kAN-ld-iHY" id="AGZ-PY-ePi"/>
-                        <outlet property="retryView" destination="FGt-yF-Sn8" id="vPW-0S-OIj"/>
+                        <outlet property="retryView" destination="UQx-cG-QjD" id="4Wi-sc-yKd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

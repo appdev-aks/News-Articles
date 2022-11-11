@@ -9,7 +9,7 @@ import Foundation
 
 class MockArticleRepository: ArticleRepositoryProtocol {
     var apiManager: APIManager
-    var mockError: Error?
+    var mockError: APIError?
     
     init(apiManager: APIManager) {
         self.apiManager = apiManager
@@ -17,13 +17,13 @@ class MockArticleRepository: ArticleRepositoryProtocol {
     
     func getArticlesFromDataSource(articleData: ArticleDataProtocol) {
         let mockRestAPI: DataRequestProtocol = MockRestAPI()
-        mockRestAPI.sendDataRequest(requestObject: RequestObj(apiManager: apiManager), callback: { (response: Result<Root, Error>) in
+        mockRestAPI.sendDataRequest(requestObject: RequestObj(apiManager: apiManager), completion: { (response: Result<Root, APIError>) in
             switch response {
             case .success(let root):
                 articleData.populateArticleData(articles: root.articles)
             case .failure(let error):
                 self.mockError = error
-                articleData.articleRequestFailed()
+                articleData.articleRequestFailed(error: error )
                 debugPrint(error.localizedDescription)
             }
         })
@@ -31,34 +31,35 @@ class MockArticleRepository: ArticleRepositoryProtocol {
 }
 
 class MockRestAPI: DataRequestProtocol {
-    func sendDataRequest<T>(requestObject: RequestObj, callback: @escaping ((Result<T, Error>) -> Void)) where T: Decodable {
-        
-        var responseData: String!
-        
-        switch requestObject.apiManager {
-        case .getValidMockArticleList:
-            responseData = MockDataResources.getFileContents(fileName: ArticleResponseFiles.mockValidArticleResponse)
-        case.getEmptyMockArticleList:
-            responseData = MockDataResources.getFileContents(fileName: ArticleResponseFiles.mockEmptyArticleResponse)
-        case .getArticleList:
-            responseData = MockDataResources.getFileContents(fileName: ArticleResponseFiles.mockValidArticleResponse)
-        case .getMockInvalidResponse:
-            responseData = MockDataResources.getFileContents(fileName: ArticleResponseFiles.mockInvalidData)
-        case .getNilResponse:
-            responseData = nil
-        }
-        
-        if let response = responseData {
-            let decoder = JSONDecoder()
-            do {
-                let result = try decoder.decode(T.self, from: Data(response.utf8))
-                callback(.success(result))
-            } catch let error {
-                debugPrint(error.localizedDescription)
-                callback(.failure(APIError.responseDataError))
+    func sendDataRequest<T>(requestObject: RequestObj, completion: @escaping ((Result<T, APIError>) -> Void)) where T: Decodable {
+        if requestObject.apiManager.getURL() != nil {
+            var responseData: String!
+            
+            switch requestObject.apiManager {
+            case.getEmptyMockArticleList:
+                responseData = MockDataResources.getFileContents(fileName: ArticleResponseFiles.mockEmptyArticleResponse)
+            case .getArticleList:
+                responseData = MockDataResources.getFileContents(fileName: ArticleResponseFiles.mockValidArticleResponse)
+            case .getMockInvalidResponse, .getResponseFromInvalidUrl:
+                responseData = MockDataResources.getFileContents(fileName: ArticleResponseFiles.mockInvalidData)
+            case .getNilResponse:
+                responseData = nil
+            }
+            
+            if let response = responseData {
+                let decoder = JSONDecoder()
+                do {
+                    let result = try decoder.decode(T.self, from: Data(response.utf8))
+                    completion(.success(result))
+                } catch let error {
+                    debugPrint(error.localizedDescription)
+                    completion(.failure(APIError.responseDataError))
+                }
+            } else {
+                completion(.failure(APIError.responseDataError))
             }
         } else {
-            callback(.failure(APIError.responseDataError))
+            completion(.failure(APIError.requestFailure))
         }
     }
 }
@@ -79,8 +80,6 @@ class MockDataResources {
             } catch {
                 debugPrint("Article could not be loaded")
             }
-        } else {
-            debugPrint("File not found")
         }
         return ""
     }

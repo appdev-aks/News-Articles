@@ -6,5 +6,5 @@
 //
 
 protocol DataRequestProtocol {
-    func sendDataRequest<T: Decodable>(requestObject: RequestObj, callback: @escaping ((Result<T, Error>) -> Void))
+    func sendDataRequest<T: Decodable>(requestObject: RequestObj, completion: @escaping ((Result<T, APIError>) -> Void))
 }

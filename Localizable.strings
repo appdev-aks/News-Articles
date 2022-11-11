@@ -7,3 +7,6 @@
 */
 
 "ArticleListTitle" = "News";
+"networkConnectionError" = "Oops your connectio seems off.. Make sure wifi or cellular data is turned on";
+"responseDataError" = "Can't load feeds at the moment. Please try after some-time";
+"requestFailure" = "Something went wrong. Please try again later";
