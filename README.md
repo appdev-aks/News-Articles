@@ -15,3 +15,6 @@ Code coverage for the application is 82.4%
 
 https://user-images.githubusercontent.com/116294714/200045983-20de6cc7-3423-4414-b83c-e8780ce671e5.mov
 
+# Error handling
+
+https://user-images.githubusercontent.com/116294714/201314291-b2f19e23-e2dc-41bb-b090-b62215df94f1.MP4
