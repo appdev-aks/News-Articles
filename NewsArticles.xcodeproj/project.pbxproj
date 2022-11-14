@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		486351C32922286600154054 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486351C22922286600154054 /* Coordinator.swift */; };
 		48C1479D2914322D003E9DCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C1479C2914322D003E9DCA /* AppDelegate.swift */; };
 		48C1479F2914322D003E9DCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C1479E2914322D003E9DCA /* SceneDelegate.swift */; };
 		48C147A12914322D003E9DCA /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C147A02914322D003E9DCA /* ArticleListViewController.swift */; };
@@ -43,6 +44,7 @@
 		48EEEF6A291E1BBE006CEAAF /* EmptyArticleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EEEF63291E1BBE006CEAAF /* EmptyArticleResponse.json */; };
 		48EEEF6B291E1BBE006CEAAF /* EmptyArticleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EEEF63291E1BBE006CEAAF /* EmptyArticleResponse.json */; };
 		48EEEF6C291E1BBE006CEAAF /* EmptyArticleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 48EEEF63291E1BBE006CEAAF /* EmptyArticleResponse.json */; };
+		48EEEF7429220E52006CEAAF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EEEF7329220E52006CEAAF /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		486351C22922286600154054 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		48C147992914322D003E9DCA /* NewsArticles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsArticles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C1479C2914322D003E9DCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48C1479E2914322D003E9DCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 		48EEEF62291E1BBE006CEAAF /* MockArticlesResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MockArticlesResponse.json; path = NewsArticles/Module/Mock/MockArticlesResponse.json; sourceTree = SOURCE_ROOT; };
 		48EEEF63291E1BBE006CEAAF /* EmptyArticleResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EmptyArticleResponse.json; path = NewsArticles/Module/Mock/EmptyArticleResponse.json; sourceTree = SOURCE_ROOT; };
 		48EEEF6D291E3FE0006CEAAF /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		48EEEF7329220E52006CEAAF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +213,7 @@
 		48C147DD29152755003E9DCA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				48EEEF7229220E30006CEAAF /* Coordinator */,
 				48C147F129153E9D003E9DCA /* Mock */,
 				48C147EC29152FF3003E9DCA /* Utility */,
 				48C147E929152F25003E9DCA /* APIManager */,
@@ -283,6 +288,15 @@
 				48EEEF61291E1BBE006CEAAF /* MockInvalidData.json */,
 			);
 			path = Resouces;
+			sourceTree = "<group>";
+		};
+		48EEEF7229220E30006CEAAF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				48EEEF7329220E52006CEAAF /* MainCoordinator.swift */,
+				486351C22922286600154054 /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +474,8 @@
 				48C147F929154A25003E9DCA /* UtilsUIKit.swift in Sources */,
 				48C147F729154712003E9DCA /* ArticleItemCell.swift in Sources */,
 				48C147D929152248003E9DCA /* Article.swift in Sources */,
+				48EEEF7429220E52006CEAAF /* MainCoordinator.swift in Sources */,
+				486351C32922286600154054 /* Coordinator.swift in Sources */,
 				48C147E829152A59003E9DCA /* DataRequestProtocol.swift in Sources */,
 				48C147A12914322D003E9DCA /* ArticleListViewController.swift in Sources */,
 				48C147FD291551BF003E9DCA /* Utils.swift in Sources */,
