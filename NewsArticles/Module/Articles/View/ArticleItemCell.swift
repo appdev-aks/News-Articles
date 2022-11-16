@@ -24,4 +24,9 @@ class ArticleItemCell: UITableViewCell {
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    override func prepareForReuse() {
+      super.prepareForReuse()
+        articleImageView.image = nil
+    }
 }
