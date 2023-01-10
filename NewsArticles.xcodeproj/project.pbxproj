@@ -241,20 +241,20 @@
 		48C147F129153E9D003E9DCA /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				48C1480829156616003E9DCA /* Resouces */,
+				48C1480829156616003E9DCA /* Resources */,
 				48C147F229153EBD003E9DCA /* MockData.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
 		};
-		48C1480829156616003E9DCA /* Resouces */ = {
+		48C1480829156616003E9DCA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				48EEEF63291E1BBE006CEAAF /* EmptyArticleResponse.json */,
 				48EEEF62291E1BBE006CEAAF /* MockArticlesResponse.json */,
 				48EEEF61291E1BBE006CEAAF /* MockInvalidData.json */,
 			);
-			path = Resouces;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		48EEEF7229220E30006CEAAF /* Coordinator */ = {
