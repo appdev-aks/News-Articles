@@ -20,7 +20,9 @@ class ArticleItemCell: UITableViewCell {
     func inflactWithData() {
         titleLabel.text = self.articleItemCellViewModel?.article.title
         sourceLabel.text = articleItemCellViewModel?.article.source?.name ?? ""
-        ImageLoader.loadImage(url: articleItemCellViewModel?.article.urlToImage ?? "", imageView: articleImageView)
+        if let articleURL = articleItemCellViewModel?.article.urlToImage {
+            ImageLoader.loadImage(url: articleURL, imageView: articleImageView)
+        }
     }
     
     override func prepareForReuse() {

@@ -23,7 +23,9 @@ class ArticleDetailsViewController: UIViewController {
             labelTitle.text = article.title
             labelDescription.text = article.description
             labelDate.text = article.source?.name
-            ImageLoader.loadImage(url: article.urlToImage ?? "", imageView: imageArticle)
+            if let articleURL = article.urlToImage {
+                ImageLoader.loadImage(url: articleURL, imageView: imageArticle)
+            }
         }
     }
 }

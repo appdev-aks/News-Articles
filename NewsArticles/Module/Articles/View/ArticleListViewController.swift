@@ -88,6 +88,7 @@ extension ArticleListViewController: ViewDataSource {
     }
     
     func articlesReceived(articleList: [Article]) {
+        debugPrint("Article received")
         self.articleItemList = articleList
         DispatchQueue.main.async {
             self.articleListTableView.reloadData()
