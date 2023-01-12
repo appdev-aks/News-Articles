@@ -8,6 +8,7 @@ On tapping the article, it opens a detailed view of it.
 
 # Code Coverage
 
+
 Code coverage for the application is 90%  <img width="794" alt="Screenshot 2023-01-13 at 12 34 47 AM" src="https://user-images.githubusercontent.com/116294714/212161375-40e0d29a-dd6c-48e2-8e98-6d7181b0d747.png">
 
 # Demo
