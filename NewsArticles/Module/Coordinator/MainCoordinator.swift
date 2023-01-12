@@ -25,7 +25,7 @@ class MainCoordinator: Coordinator {
     
     func launchArticleDetailsView(with article: Article) {
         if let articleDetailsController = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .articleDetailsController) as? ArticleDetailsViewController {
-            articleDetailsController.article = article
+            articleDetailsController.articleDetailsViewModel.article = article
             navigationController.present(articleDetailsController, animated: true, completion: nil)
         }
     }

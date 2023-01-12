@@ -10,7 +10,7 @@ import UIKit
 
 class ArticleDetailsViewController: UIViewController {
     
-    var article: Article?
+    let articleDetailsViewModel = ArticleDetailsViewModel()
     
     @IBOutlet private weak var imageArticle: UIImageView!
     @IBOutlet private weak var labelTitle: UILabel!
@@ -19,7 +19,7 @@ class ArticleDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let article = article {
+        if let article = articleDetailsViewModel.article {
             labelTitle.text = article.title
             labelDescription.text = article.description
             labelDate.text = article.source?.name

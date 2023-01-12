@@ -32,9 +32,9 @@ final class ViewControllerTests: XCTestCase {
     guard let articleDetailsViewController = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .articleDetailsController) as? ArticleDetailsViewController else {
             return XCTFail("Failed to instantiate ViewController from storyboard")
         }
-    articleDetailsViewController.article = Article(title: "title", urlToImage: "", content: "", description: "", source: Source(name: ""))
+        articleDetailsViewController.articleDetailsViewModel.article = Article(title: "title", urlToImage: "", content: "", description: "", source: Source(name: ""))
         articleDetailsViewController.loadViewIfNeeded()
-        XCTAssertEqual(articleDetailsViewController.article?.title, "title")
+        XCTAssertEqual(articleDetailsViewController.articleDetailsViewModel.article?.title, "title")
     }
 
     func testrealTableViewHasCells() {
