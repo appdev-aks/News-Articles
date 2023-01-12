@@ -7,9 +7,8 @@ The application fetches the articles from [News API](https://newsapi.org/) and d
 On tapping the article, it opens a detailed view of it.
 
 # Code Coverage
-Code coverage for the application is 82.4%  
 
-<img width="693" alt="Screenshot 2022-11-11 at 1 48 36 PM" src="https://user-images.githubusercontent.com/116294714/201313066-c7ff1545-62eb-4cd9-b22c-e9087df804f8.png">
+Code coverage for the application is 90%  <img width="794" alt="Screenshot 2023-01-13 at 12 34 47 AM" src="https://user-images.githubusercontent.com/116294714/212161375-40e0d29a-dd6c-48e2-8e98-6d7181b0d747.png">
 
 # Demo
 
