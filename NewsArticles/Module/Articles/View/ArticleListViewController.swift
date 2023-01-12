@@ -64,7 +64,8 @@ extension ArticleListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: StoryBoards.CellIdentifier.articleItemCell.rawValue) as? ArticleItemCell {
-            cell.inflactWith(article: articleItemList[indexPath.row])
+            cell.articleItemCellViewModel = ArticleItemCellViewModel(article: articleItemList[indexPath.row])
+            cell.inflactWithData()
             return cell
         }
         return UITableViewCell()

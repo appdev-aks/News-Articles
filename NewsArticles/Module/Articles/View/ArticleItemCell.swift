@@ -11,18 +11,16 @@ import Nuke
 
 class ArticleItemCell: UITableViewCell {
     
+    var articleItemCellViewModel: ArticleItemCellViewModel?
+    
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var sourceLabel: UILabel!
     @IBOutlet private weak var articleImageView: UIImageView!
 
-    func inflactWith(article: Article) {
-        titleLabel.text = article.title
-        sourceLabel.text = article.source?.name ?? ""
-        ImageLoader.loadImage(url: article.urlToImage ?? "", imageView: articleImageView)
-    }
-    
-    override class func awakeFromNib() {
-        super.awakeFromNib()
+    func inflactWithData() {
+        titleLabel.text = self.articleItemCellViewModel?.article.title
+        sourceLabel.text = articleItemCellViewModel?.article.source?.name ?? ""
+        ImageLoader.loadImage(url: articleItemCellViewModel?.article.urlToImage ?? "", imageView: articleImageView)
     }
     
     override func prepareForReuse() {

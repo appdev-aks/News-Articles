@@ -40,7 +40,8 @@ final class ViewControllerTests: XCTestCase {
     func testrealTableViewHasCells() {
         let cell = articleListViewController.articleListTableView.dequeueReusableCell(withIdentifier: StoryBoards.CellIdentifier.articleItemCell.rawValue) as! ArticleItemCell
         XCTAssertNotNil(cell)
-        cell.inflactWith(article: articles[0])
+        cell.articleItemCellViewModel = ArticleItemCellViewModel(article: articles[0])
+        cell.inflactWithData()
         articleListViewController.viewModel.populateArticleData(articles: articles)
         XCTAssertEqual(articleListViewController.articleListTableView.numberOfRows(inSection: 0), 3)
     }
