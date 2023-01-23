@@ -8,9 +8,9 @@ On tapping the article, it opens a detailed view of it.
 
 # Possible improvements
 
--Instead of clousers, async await can be used to make code more readable
+-Instead of closures, async await can be used to make code more readable
 
--Combine feamwork can be used for communication
+-Combine framework can be used for communication
 
 
 # Code Coverage
