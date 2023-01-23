@@ -9,6 +9,7 @@ On tapping the article, it opens a detailed view of it.
 # Possible improvements
 
 -Instead of clousers, async await can be used to make code more readable
+
 -Combine feamwork can be used for communication
 
 
