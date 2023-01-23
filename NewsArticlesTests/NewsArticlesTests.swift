@@ -69,6 +69,14 @@ final class NewsArticlesTests: XCTestCase {
         XCTAssertEqual(articleListView.articleItemList.count, 0)
     }
     
+    func testStubDataWhenRequestFailed(){
+        articleListView.loadViewIfNeeded()
+        let repo = ArticleRepository()
+        articleListView.viewModel = ArticleListViewModel(viewDataSource: articleListView, articleRepositoryProtocol: repo)
+        articleListView.viewModel.requestArticlesFromStub()
+        XCTAssertEqual(articleListView.articleItemList.count, 7, "Expected number of articles received")
+    }
+    
     func testMockArticleRepositoryForURL() throws {
         let exp = expectation(description: "Get error for invalid response")
         articleListView.loadViewIfNeeded()

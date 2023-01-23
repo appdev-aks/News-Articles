@@ -11,6 +11,8 @@
 		489746AB297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489746AA297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift */; };
 		489746AD297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489746AC297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift */; };
 		489746AF297EC3B6000D6D32 /* LocalisationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489746AE297EC3B6000D6D32 /* LocalisationWrapper.swift */; };
+		489746B1297ECB25000D6D32 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489746B0297ECB25000D6D32 /* FileManager.swift */; };
+		489746B3297ED024000D6D32 /* articlesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 489746B2297ECBD7000D6D32 /* articlesResponse.json */; };
 		48B6DBB42970410E00729144 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B6DBB32970410E00729144 /* MockData.swift */; };
 		48B6DBB62970422300729144 /* ArticleDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B6DBB52970422300729144 /* ArticleDetailsViewModel.swift */; };
 		48B6DBB8297043AE00729144 /* ArticleItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B6DBB7297043AE00729144 /* ArticleItemCellViewModel.swift */; };
@@ -60,6 +62,8 @@
 		489746AA297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+JailBrokenCheck.swift"; sourceTree = "<group>"; };
 		489746AC297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailBrokenDeviceDetectedViewController.swift; sourceTree = "<group>"; };
 		489746AE297EC3B6000D6D32 /* LocalisationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisationWrapper.swift; sourceTree = "<group>"; };
+		489746B0297ECB25000D6D32 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		489746B2297ECBD7000D6D32 /* articlesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articlesResponse.json; sourceTree = "<group>"; };
 		48B6DBB32970410E00729144 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		48B6DBB52970422300729144 /* ArticleDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewModel.swift; sourceTree = "<group>"; };
 		48B6DBB7297043AE00729144 /* ArticleItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleItemCellViewModel.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 				48C147DC29152717003E9DCA /* ViewModel */,
 				48C147D629152234003E9DCA /* View */,
 				48C147D72915223B003E9DCA /* Model */,
+				489746B2297ECBD7000D6D32 /* articlesResponse.json */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				48C147FC291551BF003E9DCA /* Utils.swift */,
 				489746AA297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift */,
 				489746AE297EC3B6000D6D32 /* LocalisationWrapper.swift */,
+				489746B0297ECB25000D6D32 /* FileManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 				48C147A929143231003E9DCA /* LaunchScreen.storyboard in Resources */,
 				48C147A629143231003E9DCA /* Assets.xcassets in Resources */,
 				48C147A42914322D003E9DCA /* Main.storyboard in Resources */,
+				489746B3297ED024000D6D32 /* articlesResponse.json in Resources */,
 				48C147F5291546E4003E9DCA /* ArticleItemCell.xib in Resources */,
 				48BEA756297038AD004D7A84 /* MockArticlesResponse.json in Resources */,
 			);
@@ -429,6 +436,7 @@
 				48C147E0291527AB003E9DCA /* ArticleListViewModel.swift in Sources */,
 				48C147E629152A20003E9DCA /* RESTServiceManager.swift in Sources */,
 				48C147FB29154E50003E9DCA /* ArticleDetailsViewController.swift in Sources */,
+				489746B1297ECB25000D6D32 /* FileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,9 @@ import XCTest
 @testable import NewsArticles
 
 class MockArticleRepository: ArticleRepositoryProtocol {
+    func getArticlesFromStub(articleData: NewsArticles.ArticleDataProtocol) {
+    }
+    
     var apiManager: APIManager
     var mockError: APIError?
     
@@ -70,19 +73,3 @@ private struct ArticleResponseFiles {
     static let mockEmptyArticleResponse = "EmptyArticleResponse"
     static let mockInvalidData = "MockInvalidData"
 }
-
-class MockDataResources {
-    
-    static func getFileContents(fileName: String) -> String? {
-        if let filepath = Bundle.main.path(forResource: fileName, ofType: "json") {
-            do {
-                let contents = try String(contentsOfFile: filepath)
-                return contents
-            } catch {
-                debugPrint("Article could not be loaded")
-            }
-        }
-        return ""
-    }
-}
-

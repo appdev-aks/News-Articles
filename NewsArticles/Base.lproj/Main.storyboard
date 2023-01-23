@@ -25,7 +25,7 @@
                                 <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UQx-cG-QjD">
-                                <rect key="frame" x="40" y="399.66666666666669" width="313" height="53"/>
+                                <rect key="frame" x="40" y="381" width="313" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2T-kM-3yO">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="18"/>
@@ -39,6 +39,16 @@
                                         <state key="normal" title="Retry"/>
                                         <connections>
                                             <action selector="reloadArticles:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S3e-af-3l1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gh-TD-UOJ" userLabel="Load stub data">
+                                        <rect key="frame" x="0.0" y="58" width="313" height="32"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load stub data">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="loadStubData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5w0-Yu-q5G"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -60,6 +60,10 @@ class ArticleListViewController: UIViewController {
         requestArticleData()
     }
     
+    @IBAction func loadStubData(_ sender: Any) {
+        self.viewModel.requestArticlesFromStub()
+    }
+    
     fileprivate func requestArticleData() {
         self.viewModel.requestArticles()
     }
