@@ -6,6 +6,13 @@ Its mobile app using MVVM architecture and third party library [Nuke](https://gi
 The application fetches the articles from [News API](https://newsapi.org/) and displays them in the table view. 
 On tapping the article, it opens a detailed view of it.
 
+# Possible improvements
+
+-Instead of closures, async await can be used to make code more readable
+
+-Combine framework can be used for communication
+
+
 # Code Coverage
 
 
