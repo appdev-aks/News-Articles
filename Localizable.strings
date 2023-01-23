@@ -10,3 +10,5 @@
 "networkConnectionError" = "Oops your connection seems off.. Make sure WIFI or cellular data is turned on";
 "responseDataError" = "Can't load feeds at the moment. Please try after some-time";
 "requestFailure" = "Something went wrong. Please try again later";
+"jailBrokenTitle" = "This device is jail broken";
+"jailBrokenSubTitle" = "App does not allow jailbroken devices";

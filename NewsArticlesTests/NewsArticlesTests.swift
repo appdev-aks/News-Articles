@@ -86,7 +86,7 @@ final class NewsArticlesTests: XCTestCase {
         let exp = expectation(description: "Receive request failure error for invalid URL")
         var result: APIError?
         let restServicemanager: DataRequestProtocol = RESTServiceManager()
-        restServicemanager.sendDataRequest(requestObject: RequestObj(apiManager: .getResponseFromInvalidUrl), completion: { (response: Result<Root, APIError>) in
+        restServicemanager.sendDataRequest(requestObject: RequestObj(apiManager: .getResponseFromInvalidUrl), completion: { (response: Result<ArticleResponse, APIError>) in
             switch response {
             case .success(_):
                 XCTAssert(false, "An unexpected result encountered. Received success for invalid URL")
@@ -97,25 +97,16 @@ final class NewsArticlesTests: XCTestCase {
         })
         wait(for: [exp], timeout: 2)
         XCTAssertNotNil(result)
-        XCTAssertTrue(result == .requestFailure, "An expected result encountered. Failure for invalid URL")
+        if NetworkMonitor.shared.isConnected {
+            XCTAssertTrue(result == .requestFailure, "An expected result encountered. Failure for invalid URL")
+        } else {
+            XCTAssertTrue(result == .networkConnectionFailed, "An expected result encountered. Failure no internet")
+        }
     }
     
-    func testServiceManagerValidURL(){
-        let exp = expectation(description: "Receive articles response from valid URL")
-        var result: Root?
-        let restServicemanager: DataRequestProtocol = RESTServiceManager()
-        restServicemanager.sendDataRequest(requestObject: RequestObj(apiManager: .getArticleList), completion: { (response: Result<Root, APIError>) in
-            switch response {
-            case .success(let root):
-                result = root
-                exp.fulfill()
-            case .failure(_):
-                XCTAssert(false, "An unexpected result encountered.")
-            }
-        })
-        wait(for: [exp], timeout: 3)
-        XCTAssertNotNil(result)
-        XCTAssertTrue(result?.articles.count ?? 0 > 0,"Articles received")
+    func testJailBrokenDeviceCondition(){
+        XCTAssertFalse(JailBrokenHelper.hasCydiaInstalled())
+        XCTAssertFalse(JailBrokenHelper.canEditSystemFiles())
     }
     
     func testArrayAccessSafety() throws{

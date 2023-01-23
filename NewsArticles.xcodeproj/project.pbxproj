@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		486351C32922286600154054 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486351C22922286600154054 /* Coordinator.swift */; };
+		489746AB297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489746AA297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift */; };
+		489746AD297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489746AC297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift */; };
+		489746AF297EC3B6000D6D32 /* LocalisationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489746AE297EC3B6000D6D32 /* LocalisationWrapper.swift */; };
 		48B6DBB42970410E00729144 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B6DBB32970410E00729144 /* MockData.swift */; };
 		48B6DBB62970422300729144 /* ArticleDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B6DBB52970422300729144 /* ArticleDetailsViewModel.swift */; };
 		48B6DBB8297043AE00729144 /* ArticleItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B6DBB7297043AE00729144 /* ArticleItemCellViewModel.swift */; };
@@ -54,6 +57,9 @@
 
 /* Begin PBXFileReference section */
 		486351C22922286600154054 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		489746AA297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+JailBrokenCheck.swift"; sourceTree = "<group>"; };
+		489746AC297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailBrokenDeviceDetectedViewController.swift; sourceTree = "<group>"; };
+		489746AE297EC3B6000D6D32 /* LocalisationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisationWrapper.swift; sourceTree = "<group>"; };
 		48B6DBB32970410E00729144 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		48B6DBB52970422300729144 /* ArticleDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewModel.swift; sourceTree = "<group>"; };
 		48B6DBB7297043AE00729144 /* ArticleItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleItemCellViewModel.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 				48C147F4291546E4003E9DCA /* ArticleItemCell.xib */,
 				48C147F629154712003E9DCA /* ArticleItemCell.swift */,
 				48C147FA29154E50003E9DCA /* ArticleDetailsViewController.swift */,
+				489746AC297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +246,8 @@
 				48C147ED29153003003E9DCA /* Constants.swift */,
 				48C147F829154A25003E9DCA /* UtilsUIKit.swift */,
 				48C147FC291551BF003E9DCA /* Utils.swift */,
+				489746AA297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift */,
+				489746AE297EC3B6000D6D32 /* LocalisationWrapper.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -404,7 +413,10 @@
 				48C147D929152248003E9DCA /* Article.swift in Sources */,
 				48EEEF7429220E52006CEAAF /* MainCoordinator.swift in Sources */,
 				486351C32922286600154054 /* Coordinator.swift in Sources */,
+				489746AF297EC3B6000D6D32 /* LocalisationWrapper.swift in Sources */,
+				489746AB297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift in Sources */,
 				48B6DBB62970422300729144 /* ArticleDetailsViewModel.swift in Sources */,
+				489746AD297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift in Sources */,
 				48C147E829152A59003E9DCA /* DataRequestProtocol.swift in Sources */,
 				48C147A12914322D003E9DCA /* ArticleListViewController.swift in Sources */,
 				48C147FD291551BF003E9DCA /* Utils.swift in Sources */,
@@ -598,6 +610,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-D IOS_SIMULATOR";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kata.News-Articles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -628,6 +641,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-D IOS_SIMULATOR";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kata.News-Articles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -37,6 +37,15 @@ final class ViewControllerTests: XCTestCase {
         XCTAssertEqual(articleDetailsViewController.articleDetailsViewModel.article?.title, "title")
     }
 
+    func testJailBrokenView() throws {
+    guard let jailBrokenDeviceDetectedViewController = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .jailBrokenDeviceDetectedViewController) as? JailBrokenDeviceDetectedViewController else {
+            return XCTFail("Failed to instantiate ViewController from storyboard")
+        }
+        jailBrokenDeviceDetectedViewController.loadViewIfNeeded()
+        XCTAssertNotNil(jailBrokenDeviceDetectedViewController)
+    }
+
+    
     func testrealTableViewHasCells() {
         let cell = articleListViewController.articleListTableView.dequeueReusableCell(withIdentifier: StoryBoards.CellIdentifier.articleItemCell.rawValue) as! ArticleItemCell
         XCTAssertNotNil(cell)

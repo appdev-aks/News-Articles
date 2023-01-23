@@ -23,6 +23,14 @@ class MainCoordinator: Coordinator {
         }
     }
     
+    func showJailBrokenScreen() {
+        let storyboard = UIStoryboard(name: StoryBoards.StoryboardNames.main.rawValue, bundle: Bundle.main)
+        if let vc = storyboard.instantiateViewController(withIdentifier: StoryBoards.ViewControllerIdentifier.jailBrokenDeviceDetectedViewController.rawValue) as? JailBrokenDeviceDetectedViewController {
+            vc.coordinator = self
+            navigationController.pushViewController(vc, animated: false)
+        }
+    }
+    
     func launchArticleDetailsView(with article: Article) {
         if let articleDetailsController = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .articleDetailsController) as? ArticleDetailsViewController {
             articleDetailsController.articleDetailsViewModel.article = article

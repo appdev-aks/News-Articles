@@ -40,12 +40,20 @@ class ArticleListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUIElements()
+        requestArticleData()
+    }
+    
+    func setupUIElements() {
         loadingActivityIndicator.hidesWhenStopped = true
+        title = Localization.ArticleList.screenTitle
+        setupTableView()
+    }
+    
+    func setupTableView() {
         articleListTableView.delegate = self
         articleListTableView.dataSource = self
-        title = NSLocalizedString("ArticleListTitle", comment: "Title for article list")
         ArticleItemCell.registerWith(tableView: articleListTableView)
-        requestArticleData()
     }
     
     @IBAction func reloadArticles(_ sender: Any) {

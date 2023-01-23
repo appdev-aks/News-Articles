@@ -5,7 +5,7 @@
 //  Created by Aks_dev on 04/11/22.
 //
 
-struct Root: Decodable {
+struct ArticleResponse: Decodable {
     let articles: [Article]
 }
 

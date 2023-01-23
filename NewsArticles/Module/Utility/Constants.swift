@@ -15,11 +15,11 @@ enum APIError: Error {
     func getErrorMessage() -> String {
         switch self {
         case .networkConnectionFailed:
-            return NSLocalizedString("networkConnectionError", comment: "")
+            return Localization.Error.networkConnectionError
         case .responseDataError:
-            return NSLocalizedString("responseDataError", comment: "")
+            return Localization.Error.responseDataError
         case .requestFailure:
-            return NSLocalizedString("requestFailure", comment: "")
+            return Localization.Error.requestFailure
         }
     }
 }
@@ -32,6 +32,7 @@ enum StoryBoards {
     enum ViewControllerIdentifier: String {
         case articleListController = "ArticleListViewController"
         case articleDetailsController = "ArticleDetailsViewController"
+        case jailBrokenDeviceDetectedViewController = "JailBrokenDeviceDetectedViewController"
     }
     
     enum NibFile: String {

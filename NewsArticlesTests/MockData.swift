@@ -18,7 +18,7 @@ class MockArticleRepository: ArticleRepositoryProtocol {
     
     func getArticlesFromDataSource(articleData: ArticleDataProtocol) {
         let mockRestAPI: DataRequestProtocol = MockRestAPI()
-        mockRestAPI.sendDataRequest(requestObject: RequestObj(apiManager: apiManager), completion: { (response: Result<Root, APIError>) in
+        mockRestAPI.sendDataRequest(requestObject: RequestObj(apiManager: apiManager), completion: { (response: Result<ArticleResponse, APIError>) in
             switch response {
             case .success(let root):
                 articleData.populateArticleData(articles: root.articles)

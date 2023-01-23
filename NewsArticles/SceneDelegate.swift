@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navigationController = UINavigationController()
         coordinator = MainCoordinator(navigationController: navigationController)
-        coordinator?.start()
+        UIDevice.current.isJailBroken ? coordinator?.showJailBrokenScreen() : coordinator?.start()
         self.window = UIWindow.init(windowScene: scene)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
