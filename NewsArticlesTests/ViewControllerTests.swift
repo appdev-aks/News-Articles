@@ -38,7 +38,7 @@ final class ViewControllerTests: XCTestCase {
     }
 
     func testJailBrokenView() throws {
-    guard let jailBrokenDeviceDetectedViewController = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .jailBrokenDeviceDetectedViewController) as? JailBrokenDeviceDetectedViewController else {
+    guard let jailBrokenDeviceDetectedViewController = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .jailBrokenViewController) as? JailBrokenDeviceDetectedViewController else {
             return XCTFail("Failed to instantiate ViewController from storyboard")
         }
         jailBrokenDeviceDetectedViewController.loadViewIfNeeded()

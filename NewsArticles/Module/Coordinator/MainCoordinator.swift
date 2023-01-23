@@ -25,7 +25,7 @@ class MainCoordinator: Coordinator {
     
     func showJailBrokenScreen() {
         let storyboard = UIStoryboard(name: StoryBoards.StoryboardNames.main.rawValue, bundle: Bundle.main)
-        if let vc = storyboard.instantiateViewController(withIdentifier: StoryBoards.ViewControllerIdentifier.jailBrokenDeviceDetectedViewController.rawValue) as? JailBrokenDeviceDetectedViewController {
+        if let vc = storyboard.instantiateViewController(withIdentifier: StoryBoards.ViewControllerIdentifier.jailBrokenViewController.rawValue) as? JailBrokenDeviceDetectedViewController {
             vc.coordinator = self
             navigationController.pushViewController(vc, animated: false)
         }

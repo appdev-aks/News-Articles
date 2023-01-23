@@ -32,7 +32,7 @@ enum StoryBoards {
     enum ViewControllerIdentifier: String {
         case articleListController = "ArticleListViewController"
         case articleDetailsController = "ArticleDetailsViewController"
-        case jailBrokenDeviceDetectedViewController = "JailBrokenDeviceDetectedViewController"
+        case jailBrokenViewController = "JailBrokenDeviceDetectedViewController"
     }
     
     enum NibFile: String {

@@ -17,7 +17,7 @@ class JailBrokenDeviceDetectedViewController: UIViewController {
         setupUIElements()
     }
     
-    func setupUIElements(){
+    func setupUIElements() {
         titleLabel.text = Localization.JailBroken.jailBrokenTitle
         titleSubLabel.text = Localization.JailBroken.jailBrokenSubTitle
     }
