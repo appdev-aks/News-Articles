@@ -20,6 +20,10 @@ class ArticleDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let article = articleDetailsViewModel.article {
+            setupUIElements(article: article)
+        }
+        
+        func setupUIElements(article: Article) {
             labelTitle.text = article.title
             labelDescription.text = article.description
             labelDate.text = article.source?.name

@@ -14,6 +14,10 @@ class JailBrokenDeviceDetectedViewController: UIViewController {
     @IBOutlet private weak var titleSubLabel: UILabel!
 
     override func viewDidLoad() {
+        setupUIElements()
+    }
+    
+    func setupUIElements(){
         titleLabel.text = Localization.JailBroken.jailBrokenTitle
         titleSubLabel.text = Localization.JailBroken.jailBrokenSubTitle
     }

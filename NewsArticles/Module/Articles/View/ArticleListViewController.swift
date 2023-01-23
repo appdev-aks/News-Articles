@@ -16,6 +16,7 @@ class ArticleListViewController: UIViewController {
     var coordinator: MainCoordinator?
 
     @IBOutlet private weak var loadingActivityIndicator: UIActivityIndicatorView!
+    //Not private as required in test target
     @IBOutlet weak var articleListTableView: UITableView!
     @IBOutlet private weak var retryView: UIStackView!
     @IBOutlet private weak var errorMessageLabel: UILabel!

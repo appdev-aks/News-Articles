@@ -18,7 +18,7 @@ class MockDataResources {
                 let contents = try String(contentsOfFile: filepath)
                 return contents
             } catch {
-                debugPrint("Article could not be loaded")
+                debugPrint("Data could not be loaded")
             }
         }
         return ""
