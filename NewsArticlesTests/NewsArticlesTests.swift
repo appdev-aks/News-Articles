@@ -13,17 +13,17 @@ final class NewsArticlesTests: XCTestCase {
     private var articleListView: ArticleListViewController!
 
     override func setUpWithError() throws {
-        guard let controller = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ArticleListViewController") as? ArticleListViewController else {
+        guard let controller = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .articleListController) as? ArticleListViewController else {
             return XCTFail("Failed to instantiate ViewController from main storyboard")
         }
         articleListView = controller
-        testSut = ArticleListViewModel(viewDataSource: articleListView, articleRepositoryProtocol: MockArticleRepository(apiManager: .getArticleList))
+        testSut = ArticleListViewModel(viewDataSource: articleListView, articleRepositoryProtocol: MockArticleRepository(apiManager: .getArticleList(countryCode: "us", apiKey: "apikeygfgdfvcxdsg")))
     }
                                        
     func testArticleDataFlowForRequestAndResponse() throws {
         let exp = expectation(description: "Get articles from response")
         articleListView.loadViewIfNeeded()
-        let mockRepo = MockArticleRepository(apiManager: .getArticleList)
+        let mockRepo = MockArticleRepository(apiManager: .getArticleList(countryCode: "us", apiKey: "apikeygfgdfvcxdsg"))
         articleListView.viewModel = ArticleListViewModel(viewDataSource: articleListView, articleRepositoryProtocol: mockRepo)
         articleListView.viewModel.requestArticles()
         exp.fulfill()
@@ -34,7 +34,7 @@ final class NewsArticlesTests: XCTestCase {
     func testEmptyArticleDataResponse() throws {
         let exp = expectation(description: "Get zero articles if array is empty")
         articleListView.loadViewIfNeeded()
-        let mockRepo = MockArticleRepository(apiManager: .getEmptyMockArticleList)
+        let mockRepo = MockArticleRepository(apiManager: .getEmptyArticleList)
         articleListView.viewModel = ArticleListViewModel(viewDataSource: articleListView, articleRepositoryProtocol: mockRepo)
         articleListView.viewModel.requestArticles()
         exp.fulfill()
@@ -58,7 +58,7 @@ final class NewsArticlesTests: XCTestCase {
     func testInvalidArticleDataResponse() throws {
         let exp = expectation(description: "Get error for invalid response")
         articleListView.loadViewIfNeeded()
-        let mockRepo = MockArticleRepository(apiManager: .getMockInvalidResponse)
+        let mockRepo = MockArticleRepository(apiManager: .getInvalidResponseData)
         articleListView.viewModel = ArticleListViewModel(viewDataSource: articleListView, articleRepositoryProtocol: mockRepo)
         
         articleListView.viewModel.requestArticles()
@@ -109,6 +109,18 @@ final class NewsArticlesTests: XCTestCase {
             XCTAssertTrue(result == .requestFailure, "An expected result encountered. Failure for invalid URL")
         } else {
             XCTAssertTrue(result == .networkConnectionFailed, "An expected result encountered. Failure no internet")
+        }
+    }
+    
+    func testDecoder(){
+        let response = ArticleDataResources.getFileContents(fileName: ArticleResponseFiles.articlesResponse)
+        if let response {
+            do {
+                let result: ArticleResponse = try Utils.decodeWith(from: Data(response.utf8))
+                XCTAssertTrue(result.articles.count > 0)
+            } catch {
+                XCTAssertTrue(false)
+            }
         }
     }
     

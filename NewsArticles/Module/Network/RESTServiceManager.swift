@@ -15,17 +15,23 @@ class RESTServiceManager {
             return
         }
         
-        guard let url = requestObject.apiManager.getURL() else {
+        guard let url = URL(string: requestObject.apiManager.url) else {
             completion(.failure(APIError.requestFailure))
             return
         }
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = requestObject.apiManager.httpMethod.rawValue
         
-        let urlSession = URLSession.shared.dataTask(with: url) { responseData, _, error in
+        requestObject.apiManager.headers?.forEach({ header in
+            urlRequest.setValue(header.value as? String, forHTTPHeaderField: header.key)
+        })
+        
+        let urlSession = URLSession.shared.dataTask(with: urlRequest) { responseData, _, error in
             
-            if let response = responseData {
-                let decoder = JSONDecoder()
+            if let responseData {
                 do {
-                    let result = try decoder.decode(T.self, from: response)
+                    let result: T = try Utils.decodeWith(from: responseData)
                     completion(.success(result))
                 } catch let error {
                     debugPrint(error.localizedDescription)
@@ -36,7 +42,6 @@ class RESTServiceManager {
             }
         }
         urlSession.resume()
-        
     }
 }
 

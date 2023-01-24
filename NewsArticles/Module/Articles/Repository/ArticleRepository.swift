@@ -13,29 +13,26 @@ protocol ArticleRepositoryProtocol {
 
 }
 
-class ArticleRepository {}
+class ArticleRepository: ArticleRepositoryProtocol {
+    let restServicemanager: DataRequestProtocol = RESTServiceManager()
 
-extension ArticleRepository: ArticleRepositoryProtocol {
     func getArticlesFromStub(articleData: ArticleDataProtocol) {
-        let responseData = MockDataResources.getFileContents(fileName: ArticleResponseFiles.articlesResponse)
+        let response = ArticleDataResources.getFileContents(fileName: ArticleResponseFiles.articlesResponse)
         
-        if let response = responseData {
-            let decoder = JSONDecoder()
+        if let response {
             do {
-                let result = try decoder.decode(ArticleResponse.self, from: Data(response.utf8))
+                let result: ArticleResponse = try Utils.decodeWith(from: Data(response.utf8))
                 articleData.populateArticleData(articles: result.articles)
             } catch let error {
                 debugPrint(error.localizedDescription)
                 articleData.articleRequestFailed(error: APIError.responseDataError)
             }
-        } else {
-            articleData.articleRequestFailed(error: APIError.responseDataError)
         }
     }
     
     func getArticlesFromDataSource(articleData: ArticleDataProtocol) {
-        let restServicemanager: DataRequestProtocol = RESTServiceManager()
-        restServicemanager.sendDataRequest(requestObject: RequestObj(apiManager: .getArticleList), completion: { (response: Result<ArticleResponse, APIError>) in
+        let requestObject = RequestObj(apiManager: .getArticleList(countryCode: APIConstants.countryCode, apiKey: APIConstants.apiKey))
+        restServicemanager.sendDataRequest(requestObject: requestObject, completion: { (response: Result<ArticleResponse, APIError>) in
             switch response {
             case .success(let articleResponse):
                 articleData.populateArticleData(articles: articleResponse.articles)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4829148F298029A90025E6BF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829148E298029A90025E6BF /* Endpoint.swift */; };
+		4829149129803CE90025E6BF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829149029803CE90025E6BF /* APIConstants.swift */; };
 		486351C32922286600154054 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486351C22922286600154054 /* Coordinator.swift */; };
 		489746AB297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489746AA297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift */; };
 		489746AD297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489746AC297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift */; };
@@ -58,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4829148E298029A90025E6BF /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		4829149029803CE90025E6BF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		486351C22922286600154054 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		489746AA297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+JailBrokenCheck.swift"; sourceTree = "<group>"; };
 		489746AC297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailBrokenDeviceDetectedViewController.swift; sourceTree = "<group>"; };
@@ -240,7 +244,9 @@
 		48C147E929152F25003E9DCA /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
+				4829149029803CE90025E6BF /* APIConstants.swift */,
 				48C147EA29152F35003E9DCA /* APIManager.swift */,
+				4829148E298029A90025E6BF /* Endpoint.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -415,6 +421,7 @@
 			files = (
 				48B6DBB8297043AE00729144 /* ArticleItemCellViewModel.swift in Sources */,
 				48C147F02915384D003E9DCA /* NetworkMonitor.swift in Sources */,
+				4829149129803CE90025E6BF /* APIConstants.swift in Sources */,
 				48C147F929154A25003E9DCA /* UtilsUIKit.swift in Sources */,
 				48C147F729154712003E9DCA /* ArticleItemCell.swift in Sources */,
 				48C147D929152248003E9DCA /* Article.swift in Sources */,
@@ -437,6 +444,7 @@
 				48C147E629152A20003E9DCA /* RESTServiceManager.swift in Sources */,
 				48C147FB29154E50003E9DCA /* ArticleDetailsViewController.swift in Sources */,
 				489746B1297ECB25000D6D32 /* FileManager.swift in Sources */,
+				4829148F298029A90025E6BF /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

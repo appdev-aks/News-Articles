@@ -14,13 +14,13 @@ class MockArticleRepository: ArticleRepositoryProtocol {
     
     var apiManager: APIManager
     var mockError: APIError?
-    
+    let mockRestAPI: DataRequestProtocol = MockRestAPI()
+
     init(apiManager: APIManager) {
         self.apiManager = apiManager
     }
     
     func getArticlesFromDataSource(articleData: ArticleDataProtocol) {
-        let mockRestAPI: DataRequestProtocol = MockRestAPI()
         mockRestAPI.sendDataRequest(requestObject: RequestObj(apiManager: apiManager), completion: { (response: Result<ArticleResponse, APIError>) in
             switch response {
             case .success(let root):
@@ -36,34 +36,36 @@ class MockArticleRepository: ArticleRepositoryProtocol {
 
 class MockRestAPI: DataRequestProtocol {
     func sendDataRequest<T>(requestObject: RequestObj, completion: @escaping ((Result<T, APIError>) -> Void)) where T: Decodable {
-        if requestObject.apiManager.getURL() != nil {
-            var responseData: String!
-            
-            switch requestObject.apiManager {
-            case.getEmptyMockArticleList:
-                responseData = MockDataResources.getFileContents(fileName: ArticleResponseFiles.mockEmptyArticleResponse)
-            case .getArticleList:
-                responseData = MockDataResources.getFileContents(fileName: ArticleResponseFiles.mockValidArticleResponse)
-            case .getMockInvalidResponse, .getResponseFromInvalidUrl:
-                responseData = MockDataResources.getFileContents(fileName: ArticleResponseFiles.mockInvalidData)
-            case .getNilResponse:
-                responseData = nil
-            }
-            
-            if let response = responseData {
-                let decoder = JSONDecoder()
-                do {
-                    let result = try decoder.decode(T.self, from: Data(response.utf8))
-                    completion(.success(result))
-                } catch let error {
-                    debugPrint(error.localizedDescription)
-                    completion(.failure(APIError.responseDataError))
-                }
-            } else {
+        var responseData: String!
+        
+        guard URL(string: requestObject.apiManager.url) != nil else {
+            completion(.failure(APIError.requestFailure))
+            return
+        }
+
+        
+        switch requestObject.apiManager {
+        case.getEmptyArticleList:
+            responseData = ArticleDataResources.getFileContents(fileName: ArticleResponseFiles.mockEmptyArticleResponse)
+        case .getArticleList:
+            responseData = ArticleDataResources.getFileContents(fileName: ArticleResponseFiles.mockValidArticleResponse)
+        case .getInvalidResponseData, .getResponseFromInvalidUrl:
+            responseData = ArticleDataResources.getFileContents(fileName: ArticleResponseFiles.mockInvalidData)
+        case .getNilResponse:
+            responseData = nil
+        }
+        
+        if let response = responseData {
+            let decoder = JSONDecoder()
+            do {
+                let result = try decoder.decode(T.self, from: Data(response.utf8))
+                completion(.success(result))
+            } catch let error {
+                debugPrint(error.localizedDescription)
                 completion(.failure(APIError.responseDataError))
             }
         } else {
-            completion(.failure(APIError.requestFailure))
+            completion(.failure(APIError.responseDataError))
         }
     }
 }

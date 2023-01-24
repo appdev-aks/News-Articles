@@ -16,18 +16,16 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let storyboard = UIStoryboard(name: StoryBoards.StoryboardNames.main.rawValue, bundle: Bundle.main)
-        if let vc = storyboard.instantiateViewController(withIdentifier: StoryBoards.ViewControllerIdentifier.articleListController.rawValue) as? ArticleListViewController {
-            vc.coordinator = self
-            navigationController.pushViewController(vc, animated: false)
+        if let articleListViewController = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .articleListController) as? ArticleListViewController {
+            articleListViewController.coordinator = self
+            navigationController.pushViewController(articleListViewController, animated: false)
         }
     }
     
     func showJailBrokenScreen() {
-        let storyboard = UIStoryboard(name: StoryBoards.StoryboardNames.main.rawValue, bundle: Bundle.main)
-        if let vc = storyboard.instantiateViewController(withIdentifier: StoryBoards.ViewControllerIdentifier.jailBrokenViewController.rawValue) as? JailBrokenDeviceDetectedViewController {
-            vc.coordinator = self
-            navigationController.pushViewController(vc, animated: false)
+        if let jailBrokenDeviceViewController = UtilsUIKit.getViewControllerWith(storyBoardName: .main, viewControllerId: .jailBrokenViewController) as? JailBrokenDeviceDetectedViewController {
+            jailBrokenDeviceViewController.coordinator = self
+            navigationController.pushViewController(jailBrokenDeviceViewController, animated: false)
         }
     }
     

@@ -11,7 +11,7 @@ struct ArticleResponseFiles {
     static let articlesResponse = "articlesResponse"
 }
 
-class MockDataResources {
+class ArticleDataResources {
     static func getFileContents(fileName: String) -> String? {
         if let filepath = Bundle.main.path(forResource: fileName, ofType: "json") {
             do {

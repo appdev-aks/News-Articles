@@ -11,21 +11,56 @@ struct RequestObj {
     var apiManager: APIManager
 }
 
-enum APIManager {
-    case getArticleList
-    case getEmptyMockArticleList
-    case getMockInvalidResponse
+enum APIManager: Endpoint {
+    case getArticleList(countryCode: String, apiKey: String)
+    case getEmptyArticleList
+    case getInvalidResponseData
     case getResponseFromInvalidUrl
     case getNilResponse
 
-    func getURL() -> URL? {
+    var path: String {
         switch self {
-        case .getArticleList:
-            return URL.articleList()
-        case .getNilResponse, .getEmptyMockArticleList, .getMockInvalidResponse:
-            return URL.mockURL
-        case .getResponseFromInvalidUrl:
-            return URL.mockInvalidURL
+        case .getArticleList(let countryCode, let apiKey):
+            return "country=\(countryCode)&apiKey=\(apiKey)"
+        case .getNilResponse, .getEmptyArticleList, .getInvalidResponseData, .getResponseFromInvalidUrl:
+            return ""
         }
     }
+
+    var baseURL: String {
+        switch self {
+        case .getArticleList:
+            return "https://newsapi.org/v2/top-headlines?"
+        case .getResponseFromInvalidUrl:
+            return "https://newsapi.org /v2/top-headlines?"
+        case .getInvalidResponseData, .getEmptyArticleList, .getNilResponse:
+            return "http://google.com"
+        }
+    }
+    
+    var httpMethod: HTTPMethod {
+        switch self {
+        case .getArticleList:
+            return .get
+        case .getResponseFromInvalidUrl, .getInvalidResponseData, .getEmptyArticleList, .getNilResponse:
+            return .get
+        }
+    }
+    
+    #warning("Unused for implemented APIs")
+    var body: [String: Any]? {
+        switch self {
+        case .getArticleList, .getResponseFromInvalidUrl, .getInvalidResponseData, .getEmptyArticleList, .getNilResponse:
+            return [:]
+        }
+    }
+    
+    #warning("Unused for implemented APIs")
+    var headers: [String: Any]? {
+        switch self {
+        case .getArticleList, .getResponseFromInvalidUrl, .getInvalidResponseData, .getEmptyArticleList, .getNilResponse:
+                return [:]
+        }
+    }
+    
 }
