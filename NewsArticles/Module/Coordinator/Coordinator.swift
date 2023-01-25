@@ -12,4 +12,6 @@ protocol Coordinator {
     var navigationController: UINavigationController { get set }
     func start()
     func showJailBrokenScreen()
+    //We can create child coordinators and segregate other navigations accordingly.
+    func launchArticleDetailsView(with article: Article)
 }
