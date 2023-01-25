@@ -94,7 +94,7 @@ final class NewsArticlesTests: XCTestCase {
         let exp = expectation(description: "Receive request failure error for invalid URL")
         var result: APIError?
         let restServicemanager: DataRequestProtocol = RESTServiceManager()
-        restServicemanager.sendDataRequest(requestObject: RequestObj(apiManager: .getResponseFromInvalidUrl), completion: { (response: Result<ArticleResponse, APIError>) in
+        restServicemanager.sendDataRequest(requestObject: RequestObj(apiManager: .getResponseFromInvalidUrl), completion: { (response: Result<Data, APIError>) in
             switch response {
             case .success(_):
                 XCTAssert(false, "An unexpected result encountered. Received success for invalid URL")
@@ -114,7 +114,7 @@ final class NewsArticlesTests: XCTestCase {
     
     func testDecoder(){
         let response = ArticleDataResources.getFileContents(fileName: ArticleResponseFiles.articlesResponse)
-        if let response {
+        if let response = response {
             do {
                 let result: ArticleResponse = try Utils.decodeWith(from: Data(response.utf8))
                 XCTAssertTrue(result.articles.count > 0)

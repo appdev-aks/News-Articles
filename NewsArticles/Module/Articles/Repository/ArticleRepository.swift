@@ -19,7 +19,7 @@ class ArticleRepository: ArticleRepositoryProtocol {
     func getArticlesFromStub(articleData: ArticleDataProtocol) {
         let response = ArticleDataResources.getFileContents(fileName: ArticleResponseFiles.articlesResponse)
         
-        if let response {
+        if let response = response {
             do {
                 let result: ArticleResponse = try Utils.decodeWith(from: Data(response.utf8))
                 articleData.populateArticleData(articles: result.articles)
@@ -32,10 +32,16 @@ class ArticleRepository: ArticleRepositoryProtocol {
     
     func getArticlesFromDataSource(articleData: ArticleDataProtocol) {
         let requestObject = RequestObj(apiManager: .getArticleList(countryCode: APIConstants.countryCode, apiKey: APIConstants.apiKey))
-        restServicemanager.sendDataRequest(requestObject: requestObject, completion: { (response: Result<ArticleResponse, APIError>) in
+        restServicemanager.sendDataRequest(requestObject: requestObject, completion: { (response: Result<Data, APIError>) in
             switch response {
             case .success(let articleResponse):
-                articleData.populateArticleData(articles: articleResponse.articles)
+                do {
+                    let result: ArticleResponse = try Utils.decodeWith(from: articleResponse)
+                    articleData.populateArticleData(articles: result.articles)
+                } catch let error {
+                    debugPrint(error.localizedDescription)
+                    articleData.articleRequestFailed(error: APIError.responseDataError)
+                }
             case .failure(let error):
                 debugPrint(error.localizedDescription)
                 articleData.articleRequestFailed(error: error)

@@ -8,7 +8,7 @@
 import Foundation
 
 class RESTServiceManager {
-    func fetchDataUsing<T: Decodable>(requestObject: RequestObj, completion: @escaping  (Result<T, APIError>) -> Void) {
+    func fetchDataUsing(requestObject: RequestObj, completion: @escaping  (Result<Data, APIError>) -> Void) {
 
         guard NetworkMonitor.shared.isConnected else {
             completion(.failure(APIError.networkConnectionFailed))
@@ -29,15 +29,10 @@ class RESTServiceManager {
         
         let urlSession = URLSession.shared.dataTask(with: urlRequest) { responseData, _, error in
             
-            if let responseData {
-                do {
-                    let result: T = try Utils.decodeWith(from: responseData)
-                    completion(.success(result))
-                } catch let error {
-                    debugPrint(error.localizedDescription)
-                    completion(.failure(APIError.responseDataError))
-                }
+            if let responseData = responseData {
+                completion(.success(responseData))
             } else {
+                debugPrint(error.debugDescription)
                 completion(.failure(APIError.responseDataError))
             }
         }
@@ -46,7 +41,7 @@ class RESTServiceManager {
 }
 
 extension RESTServiceManager: DataRequestProtocol {
-    func sendDataRequest<T>(requestObject: RequestObj, completion: @escaping ((Result<T, APIError>) -> Void)) where T: Decodable {
+    func sendDataRequest(requestObject: RequestObj, completion: @escaping ((Result<Data, APIError>) -> Void)) {
         fetchDataUsing(requestObject: requestObject, completion: completion)
     }
 }

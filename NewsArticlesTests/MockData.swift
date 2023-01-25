@@ -21,10 +21,16 @@ class MockArticleRepository: ArticleRepositoryProtocol {
     }
     
     func getArticlesFromDataSource(articleData: ArticleDataProtocol) {
-        mockRestAPI.sendDataRequest(requestObject: RequestObj(apiManager: apiManager), completion: { (response: Result<ArticleResponse, APIError>) in
+        mockRestAPI.sendDataRequest(requestObject: RequestObj(apiManager: apiManager), completion: { (response: Result<Data, APIError>) in
             switch response {
-            case .success(let root):
-                articleData.populateArticleData(articles: root.articles)
+            case .success(let result):
+                do {
+                    let result: ArticleResponse = try Utils.decodeWith(from: result)
+                    articleData.populateArticleData(articles: result.articles)
+                } catch let error {
+                    debugPrint(error.localizedDescription)
+                    articleData.articleRequestFailed(error: APIError.responseDataError)
+                }
             case .failure(let error):
                 self.mockError = error
                 articleData.articleRequestFailed(error: error )

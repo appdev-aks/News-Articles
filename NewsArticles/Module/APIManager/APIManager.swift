@@ -47,7 +47,7 @@ enum APIManager: Endpoint {
         }
     }
     
-    #warning("Unused for implemented APIs")
+   // "Unused for implemented APIs"
     var body: [String: Any]? {
         switch self {
         case .getArticleList, .getResponseFromInvalidUrl, .getInvalidResponseData, .getEmptyArticleList, .getNilResponse:
@@ -55,7 +55,7 @@ enum APIManager: Endpoint {
         }
     }
     
-    #warning("Unused for implemented APIs")
+   // "Unused for implemented APIs"
     var headers: [String: Any]? {
         switch self {
         case .getArticleList, .getResponseFromInvalidUrl, .getInvalidResponseData, .getEmptyArticleList, .getNilResponse:

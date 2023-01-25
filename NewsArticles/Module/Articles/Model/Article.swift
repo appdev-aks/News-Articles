@@ -21,6 +21,7 @@ struct Article: Decodable {
 struct Source: Decodable {
     let name: String?
     
+    // As API is giving inconsistent response, added multiple keys for decoding
     enum CodingKeys: String, CodingKey, CaseIterable {
         case name, Name
     }
