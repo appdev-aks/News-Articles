@@ -17,7 +17,7 @@ final class NewsArticlesTests: XCTestCase {
             return XCTFail("Failed to instantiate ViewController from main storyboard")
         }
         articleListView = controller
-        testSut = ArticleListViewModel(viewDataSource: articleListView, articleRepositoryProtocol: MockArticleRepository(apiManager: .getArticleList(countryCode: "us", apiKey: "apikeygfgdfvcxdsg")))
+        testSut = ArticleListViewModel(viewDataSource: articleListView, articleRepositoryProtocol: MockArticleRepository(apiManager: .getArticleList(countryCode: APIConstants.countryCode, apiKey: "APIKeyfgfdg")))
     }
                                        
     func testArticleDataFlowForRequestAndResponse() throws {
@@ -110,6 +110,19 @@ final class NewsArticlesTests: XCTestCase {
         } else {
             XCTAssertTrue(result == .networkConnectionFailed, "An expected result encountered. Failure no internet")
         }
+    }
+    
+    func testPostServiceRequest(){
+        var urlRequest: URLRequest?
+        let requestObject = RequestObj(apiManager: .getArticleList(countryCode: APIConstants.countryCode, apiKey: "APIKeyfgfdg"))
+        guard let url = URL(string: requestObject.apiManager.url) else {
+            XCTAssert(false, "Invalid URL")
+            return
+        }
+        urlRequest = RESTServiceManager().postRequest(using: RequestObj(apiManager: .getArticleList(countryCode: APIConstants.countryCode, apiKey: APIConstants.apiKey)), url: url)
+        XCTAssertNotNil(urlRequest)
+        urlRequest = RESTServiceManager().getRequest(using: RequestObj(apiManager: .getArticleList(countryCode: APIConstants.countryCode, apiKey: APIConstants.apiKey)), url: url)
+        XCTAssertNotNil(urlRequest)
     }
     
     func testDecoder(){

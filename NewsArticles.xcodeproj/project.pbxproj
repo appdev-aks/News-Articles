@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4829148F298029A90025E6BF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829148E298029A90025E6BF /* Endpoint.swift */; };
 		4829149129803CE90025E6BF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829149029803CE90025E6BF /* APIConstants.swift */; };
+		48291493298142CF0025E6BF /* RESTServiceRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48291492298142CE0025E6BF /* RESTServiceRequestProtocol.swift */; };
 		486351C32922286600154054 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486351C22922286600154054 /* Coordinator.swift */; };
 		489746AB297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489746AA297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift */; };
 		489746AD297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489746AC297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		4829148E298029A90025E6BF /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		4829149029803CE90025E6BF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		48291492298142CE0025E6BF /* RESTServiceRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTServiceRequestProtocol.swift; sourceTree = "<group>"; };
 		486351C22922286600154054 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		489746AA297EA9EF000D6D32 /* UIDevice+JailBrokenCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+JailBrokenCheck.swift"; sourceTree = "<group>"; };
 		489746AC297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailBrokenDeviceDetectedViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				48C147E529152A20003E9DCA /* RESTServiceManager.swift */,
 				48C147EF2915384D003E9DCA /* NetworkMonitor.swift */,
 				48C147FF291555CF003E9DCA /* ImageLoader.swift */,
+				48291492298142CE0025E6BF /* RESTServiceRequestProtocol.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				489746AD297EAD22000D6D32 /* JailBrokenDeviceDetectedViewController.swift in Sources */,
 				48C147E829152A59003E9DCA /* DataRequestProtocol.swift in Sources */,
 				48C147A12914322D003E9DCA /* ArticleListViewController.swift in Sources */,
+				48291493298142CF0025E6BF /* RESTServiceRequestProtocol.swift in Sources */,
 				48C147FD291551BF003E9DCA /* Utils.swift in Sources */,
 				48C147EB29152F35003E9DCA /* APIManager.swift in Sources */,
 				48C1479D2914322D003E9DCA /* AppDelegate.swift in Sources */,

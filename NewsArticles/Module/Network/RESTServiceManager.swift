@@ -8,7 +8,7 @@
 import Foundation
 
 class RESTServiceManager {
-    func fetchDataUsing(requestObject: RequestObj, completion: @escaping  (Result<Data, APIError>) -> Void) {
+    fileprivate func fetchDataUsing(requestObject: RequestObj, completion: @escaping  (Result<Data, APIError>) -> Void) {
 
         guard NetworkMonitor.shared.isConnected else {
             completion(.failure(APIError.networkConnectionFailed))
@@ -20,15 +20,45 @@ class RESTServiceManager {
             return
         }
 
+        switch requestObject.apiManager.httpMethod {
+        case .post:
+            let urlRequest = postRequest(using: requestObject, url: url)
+            executeDataTask(urlRequest: urlRequest, completion: completion)
+        case .get:
+            let urlRequest = getRequest(using: requestObject, url: url)
+            executeDataTask(urlRequest: urlRequest, completion: completion)
+        }
+    }
+}
+
+extension RESTServiceManager: DataRequestProtocol {
+    func sendDataRequest(requestObject: RequestObj, completion: @escaping ((Result<Data, APIError>) -> Void)) {
+        fetchDataUsing(requestObject: requestObject, completion: completion)
+    }
+}
+
+extension RESTServiceManager: RESTServiceRequestProtocol {
+    func getRequest(using requestObject: RequestObj, url: URL) -> URLRequest {
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = requestObject.apiManager.httpMethod.rawValue
-        
+        urlRequest.httpMethod = HTTPMethod.get.rawValue
         requestObject.apiManager.headers?.forEach({ header in
             urlRequest.setValue(header.value as? String, forHTTPHeaderField: header.key)
         })
-        
+        return urlRequest
+    }
+    
+    func postRequest(using requestObject: RequestObj, url: URL) -> URLRequest {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = HTTPMethod.post.rawValue
+        urlRequest.httpBody = requestObject.apiManager.body?.data(using: .utf8)
+        requestObject.apiManager.headers?.forEach({ header in
+            urlRequest.setValue(header.value as? String, forHTTPHeaderField: header.key)
+        })
+        return urlRequest
+    }
+    
+    func executeDataTask(urlRequest: URLRequest, completion: @escaping (Result<Data, APIError>) -> Void) {
         let urlSession = URLSession.shared.dataTask(with: urlRequest) { responseData, _, error in
-            
             if let responseData = responseData {
                 completion(.success(responseData))
             } else {
@@ -37,11 +67,5 @@ class RESTServiceManager {
             }
         }
         urlSession.resume()
-    }
-}
-
-extension RESTServiceManager: DataRequestProtocol {
-    func sendDataRequest(requestObject: RequestObj, completion: @escaping ((Result<Data, APIError>) -> Void)) {
-        fetchDataUsing(requestObject: requestObject, completion: completion)
     }
 }
