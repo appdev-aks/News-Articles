@@ -48,10 +48,10 @@ enum APIManager: Endpoint {
     }
     
    // "Unused for implemented APIs"
-    var body: [String: Any]? {
+    var body: String? {
         switch self {
         case .getArticleList, .getResponseFromInvalidUrl, .getInvalidResponseData, .getEmptyArticleList, .getNilResponse:
-            return [:]
+            return ""
         }
     }
     

@@ -29,6 +29,7 @@ class MockArticleRepository: ArticleRepositoryProtocol {
                     articleData.populateArticleData(articles: result.articles)
                 } catch let error {
                     debugPrint(error.localizedDescription)
+                    self.mockError = .responseDataError
                     articleData.articleRequestFailed(error: APIError.responseDataError)
                 }
             case .failure(let error):
@@ -41,7 +42,7 @@ class MockArticleRepository: ArticleRepositoryProtocol {
 }
 
 class MockRestAPI: DataRequestProtocol {
-    func sendDataRequest<T>(requestObject: RequestObj, completion: @escaping ((Result<T, APIError>) -> Void)) where T: Decodable {
+    func sendDataRequest(requestObject: RequestObj, completion: @escaping ((Result<Data, APIError>) -> Void)) {
         var responseData: String!
         
         guard URL(string: requestObject.apiManager.url) != nil else {
@@ -62,14 +63,7 @@ class MockRestAPI: DataRequestProtocol {
         }
         
         if let response = responseData {
-            let decoder = JSONDecoder()
-            do {
-                let result = try decoder.decode(T.self, from: Data(response.utf8))
-                completion(.success(result))
-            } catch let error {
-                debugPrint(error.localizedDescription)
-                completion(.failure(APIError.responseDataError))
-            }
+            completion(.success(Data(response.utf8)))
         } else {
             completion(.failure(APIError.responseDataError))
         }

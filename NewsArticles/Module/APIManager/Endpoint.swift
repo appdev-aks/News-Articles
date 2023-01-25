@@ -17,7 +17,7 @@ protocol Endpoint {
     var baseURL: String { get }
     var path: String { get }
     var headers: [String: Any]? { get }
-    var body: [String: Any]? { get }
+    var body: String? { get }
 }
 
 extension Endpoint {
